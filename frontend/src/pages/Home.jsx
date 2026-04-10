@@ -8,7 +8,10 @@ import Header from "../components/Header";
 import UniversityCard from "../components/UniversityCard";
 import Footer from "../components/Footer";
 
-const API = "http://localhost:5000/universities";
+/*const API = "http://localhost:5000/universities";*/
+
+const BASE_URL = "https://mbbs-vietnam.onrender.com";
+const API = `${BASE_URL}/universities`;
 
 const stats = [
   { num: "500+", label: "Students placed" },

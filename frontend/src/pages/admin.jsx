@@ -1,9 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API          = "http://localhost:5000/universities";
+/*const API          = "http://localhost:5000/universities";
 const UPLOAD_API   = "http://localhost:5000/upload-image";
-const BLOGS_API    = "http://localhost:5000/api/blogs";
+const BLOGS_API    = "http://localhost:5000/api/blogs";*/
+
+
+const BASE_URL = "https://mbbs-vietnam.onrender.com";
+
+const API        = `${BASE_URL}/universities`;
+const UPLOAD_API = `${BASE_URL}/upload-image`;
+const BLOGS_API  = `${BASE_URL}/api/blogs`;
+
 const iconOptions  = ["🏥", "👩‍⚕️", "📘", "✈️", "🍛", "🎓", "✅"];
 
 /* ═══════════════════════════════════════════════════════════
