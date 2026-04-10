@@ -46,7 +46,11 @@ app.use(express.json());
 /* =========================
    DB CONNECTION CHECK
 ========================= */
-pool.connect()
+/*pool.connect()
+  .then(() => console.log("✅ Database Connected"))
+  .catch(err => console.error("❌ DB Connection Error:", err));*/
+
+  pool.query("SELECT 1")
   .then(() => console.log("✅ Database Connected"))
   .catch(err => console.error("❌ DB Connection Error:", err));
 
