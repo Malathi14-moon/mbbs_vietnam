@@ -1,0 +1,230 @@
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 28px rgba(0,0,0,.09);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 36px 36px 32px 42px;
+  gap: 0;
+  position: relative;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 44px rgba(0,0,0,.14);
+  transform: translateY(-4px);
+}
+
+/* LEFT */
+.left {
+  flex: 1;
+  min-width: 0;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.95rem;
+  font-weight: 900;
+  color: #c8202f;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.short {
+  font-size: 1.6rem;
+  color: #c8202f;
+}
+
+.feeBadge {
+  display: inline-flex;
+  align-items: center;
+  background: #c8202f;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 6px;
+  margin-bottom: 22px;
+  width: fit-content;
+}
+
+.list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .975rem;
+  color: #1e2835;
+  line-height: 1.45;
+}
+
+.icon { font-size: 1.1rem; flex-shrink: 0; line-height: 1.45; }
+
+.actionsLeft {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* RIGHT */
+.right {
+  flex-shrink: 0;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ── ARCH IMAGE ── */
+.archWrap {
+  position: relative;
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.archWrap::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: 0;
+  border-radius: 52% 52% 0 0 / 40% 40% 0 0;
+  border: 3px solid rgba(200,32,47,.22);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.archClip {
+  width: 260px;
+  height: 310px;
+  border-radius: 50% 50% 0 0 / 38% 38% 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 32px rgba(200,32,47,.18), 0 2px 12px rgba(0,0,0,.10);
+  background: #dde0ea;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.card:hover .img { transform: scale(1.06); }
+
+.archBase {
+  width: 260px;
+  height: 6px;
+  background: linear-gradient(90deg, #c8202f 0%, #a0151f 100%);
+  border-radius: 0 0 4px 4px;
+}
+
+.fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dde0ea;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5a6a80;
+}
+
+.actionsRight {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Buttons */
+.btnApply {
+  background: #c8202f;
+  color: #ffffff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .97rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .18s, transform .15s;
+  flex: 1;
+}
+.btnApply:hover { background: #a0151f; transform: scale(1.02); }
+
+.btnBrochure {
+  background: transparent;
+  color: #1e2835;
+  border: 2px solid #c0c8d4;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .93rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color .18s, background .18s;
+}
+.btnBrochure:hover { border-color: #1e2835; background: #f4f6fb; }
+
+.btnDownload {
+  background: #1a3260;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.4;
+  transition: background .18s;
+  flex: 1;
+}
+.btnDownload:hover { background: #0f2044; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .card { flex-direction: column; padding: 28px 24px 24px; }
+  .left { padding-right: 0; }
+  .right { width: 100%; align-items: flex-start; margin-top: 24px; }
+  .archWrap, .archClip { width: 100%; }
+  .archClip { height: 220px; border-radius: 50% 50% 0 0 / 28% 28% 0 0; }
+  .archBase { width: 100%; }
+  .actionsRight { justify-content: flex-start; }
+}
+
+@media (max-width: 500px) {
+  .title { font-size: 1.45rem; }
+  .feeBadge { font-size: .9rem; padding: 7px 14px; }
+  .actionsLeft { flex-direction: column; gap: 10px; }
+  .btnApply, .btnBrochure { width: 100%; text-align: center; }
+}
