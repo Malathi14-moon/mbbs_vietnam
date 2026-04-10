@@ -6,7 +6,7 @@ const UPLOAD_API   = "http://localhost:5000/upload-image";
 const BLOGS_API    = "http://localhost:5000/api/blogs";*/
 
 
-const BASE_URL = "https://mbbs-vietnam.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 const API        = `${BASE_URL}/universities`;
 const UPLOAD_API = `${BASE_URL}/upload-image`;
