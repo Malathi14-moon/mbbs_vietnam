@@ -167,10 +167,18 @@ app.get("/universities", async (req, res) => {
     }));
 
     res.json(data);
-  } catch (err) {
+  } /*catch (err) {
     console.error("GET ERROR:", err);
     res.status(500).json({ error: "Server error" });
-  }
+  }*/
+
+    catch (err) {
+  console.error("GET UNIVERSITIES ERROR:", err);
+  res.status(500).json({
+    error: err.message,
+    detail: err
+  });
+}
 });
 
 /* ===== ADD UNIVERSITY ===== */
