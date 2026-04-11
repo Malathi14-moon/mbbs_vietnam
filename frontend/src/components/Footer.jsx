@@ -72,7 +72,7 @@ export default function Footer() {
             Contact Us
           </h3>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>📞 +91 98765 43210</li>
+            <li>📞 90034 20057 | 72000 95846</li>
             <li>✉ info@medviet.in</li>
             <li>🕐 Mon–Sat: 9 AM – 6 PM</li>
           </ul>

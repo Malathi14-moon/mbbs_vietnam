@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 /*const API = "http://localhost:5000/universities";*/
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
 const API = `${BASE_URL}/universities`;
 
 const stats = [
@@ -80,6 +80,13 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
+    const resolveImage = (image) => {
+      if (!image) return null;
+      if (image.startsWith("http://") || image.startsWith("https://")) return image;
+      const normalized = image.startsWith("/") ? image : `/${image}`;
+      return `${BASE_URL}${normalized}`;
+    };
+
     fetch(API)
       .then(async (res) => {
         const data = await res.json();
@@ -99,6 +106,7 @@ export default function Home() {
           data.map((uni) => ({
             ...uni,
             highlights: normalizeHighlights(uni.highlights),
+            image: resolveImage(uni.image),
           }))
         );
       })

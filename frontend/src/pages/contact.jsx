@@ -169,7 +169,7 @@ export default function ContactPage() {
 
             {/* Info rows */}
             {[
-              { icon: <PhoneIcon />, label: "Call Us", value: "+91  98765 43210" },
+              { icon: <PhoneIcon />, label: "Call Us", value: "90034 20057 | 72000 95846" },
               { icon: <MailIcon />, label: "Email", value: "info@medviet.com" },
               {
                 icon: <LocationIcon />,

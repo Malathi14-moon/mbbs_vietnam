@@ -103,17 +103,28 @@ function parseHighlights(highlights) {
   }
 }
 
-/* function buildImageUrl(req, filename) {
-  if (!filename) return null;
-  return `${req.protocol}://${req.get("host")}/uploads/${filename}`;
-}*/
-
 function buildImageUrl(req, filename) {
   if (!filename) return null;
+  return `${req.protocol}://${req.get("host")}/uploads/${filename}`;
+}
 
-  const BASE_URL = process.env.BASE_URL || `${req.protocol}://${req.get("host")}`;
+function normalizeImageUrl(req, image) {
+  if (!image || typeof image !== "string") return null;
+  if (image.startsWith("http://") || image.startsWith("https://")) {
+    return image;
+  }
+  const normalized = image.startsWith("/") ? image : `/${image}`;
+  return `${req.protocol}://${req.get("host")}${normalized}`;
+}
 
-  return `${BASE_URL}/uploads/${filename}`;
+function createEmailTransporter() {
+  const user = process.env.EMAIL_USER || "annanmurugan262@gmail.com";
+  const pass = process.env.EMAIL_PASS || "jchd nkyf fgrc guwq";
+
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
 }
 
 /* =========================
@@ -172,6 +183,7 @@ app.get("/universities", async (req, res) => {
     const data = result.rows.map((row) => ({
       ...row,
       highlights: parseHighlights(row.highlights),
+      image: normalizeImageUrl(req, row.image),
     }));
 
     res.json(data);
@@ -292,11 +304,10 @@ app.put("/universities/:id", verifyAdmin, async (req, res) => {
 /* ===== LOGIN ===== */
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
+  const adminUser = process.env.ADMIN_USERNAME || "admin";
+  const adminPass = process.env.ADMIN_PASSWORD || "admin123";
 
-  if (
-    username === process.env.ADMIN_USERNAME &&
-    password === process.env.ADMIN_PASSWORD
-  ) {
+  if (username === adminUser && password === adminPass) {
     return res.json({ token: "admin-token" });
   }
 
@@ -311,16 +322,13 @@ app.post("/login", (req, res) => {
 app.post("/send-email", async (req, res) => {
   const { fullName, email, phone, message } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    service: "Gmail", // or another SMTP service
-    auth: {
-      user: "annanmurugan262@gmail.com",
-      pass: "jchd nkyf fgrc guwq",
-    },
-  });
+  const transporter = createEmailTransporter();
+  const senderEmail = process.env.EMAIL_USER || "annanmurugan262@gmail.com";
+  const fromAddress = process.env.EMAIL_FROM || `"Vietnam MBBS" <${senderEmail}>`;
 
   const mailOptions = {
-    from: email,
+    from: fromAddress,
+    replyTo: email,
     to: "malathimurugan1411@gmail.com", // where you want to receive emails
     subject: `New Enquiry from ${fullName}`,
     text: `
@@ -335,6 +343,7 @@ app.post("/send-email", async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Email sent successfully" });
   } catch (err) {
+    console.error("SEND EMAIL ERROR:", err);
     res.status(500).json({ message: err.message });
   }
 });
@@ -346,16 +355,13 @@ app.post("/api/enquiry", async (req, res) => {
   const { fullName, email, phone, state } = req.body;
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "annanmurugan262@gmail.com",
-        pass: "jchd nkyf fgrc guwq",
-      },
-    });
+    const transporter = createEmailTransporter();
+    const senderEmail = process.env.EMAIL_USER || "annanmurugan262@gmail.com";
+    const fromAddress = process.env.EMAIL_FROM || `"Vietnam MBBS" <${senderEmail}>`;
 
     const mailOptions = {
-      from: email,
+      from: fromAddress,
+      replyTo: email,
       to: "malathimurugan1411@gmail.com",
       subject: "New MBBS Enquiry Form Submission",
       html: `
@@ -371,7 +377,7 @@ app.post("/api/enquiry", async (req, res) => {
 
     res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    console.error(error);
+    console.error("ENQUIRY EMAIL ERROR:", error);
     res.status(500).json({ message: "Email sending failed" });
   }
 });
