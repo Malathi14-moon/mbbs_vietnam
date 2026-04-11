@@ -19,6 +19,8 @@ const admissionItems = [
 
 
 
+
+
 function HeaderLegacyEnquiryModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     fullName: "", email: "", phone: "", state: "",
@@ -26,6 +28,9 @@ function HeaderLegacyEnquiryModal({ isOpen, onClose }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const BASE_URL =
+  import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
 
   if (!isOpen) return null;
 
@@ -37,11 +42,11 @@ function HeaderLegacyEnquiryModal({ isOpen, onClose }) {
     setLoading(true);
     setStatus("");
     try {
-      const res = await fetch("http://localhost:5000/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+        const res = await fetch(`${BASE_URL}/api/enquiry`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
       if (res.ok) {
         setShowSuccess(true);
         setFormData({ fullName: "", email: "", phone: "", state: "" });

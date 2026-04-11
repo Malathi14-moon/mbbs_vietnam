@@ -7,11 +7,15 @@ export default function BlogPage() {
   const navigate = useNavigate();
   const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/blogs")
-      .then((res) => res.json())
-      .then(setBlogs);
-  }, []);
+  
+
+  const BASE_URL = import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+
+useEffect(() => {
+  fetch(`${BASE_URL}/api/blogs`)
+    .then((res) => res.json())
+    .then(setBlogs);
+}, []);
 
   return (
     <>

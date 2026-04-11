@@ -40,6 +40,11 @@ const states = [
   "Puducherry",
 ];
 
+
+
+const BASE_URL = import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+
+
 export default function EnquiryModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -62,11 +67,11 @@ export default function EnquiryModal({ isOpen, onClose }) {
     setStatus("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(`${BASE_URL}/api/enquiry`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
 
       if (res.ok) {
         setShowSuccess(true);

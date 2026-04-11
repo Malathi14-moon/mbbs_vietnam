@@ -8,6 +8,10 @@ export default function AdminLogin() {
   const [error, setError] = useState("");
   const [focused, setFocused] = useState("");
 
+
+  const BASE_URL =
+  import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,12 +24,11 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
+      const res = await fetch(`${BASE_URL}/login`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(form),
+});
       const data = await res.json();
 
       if (res.ok) {

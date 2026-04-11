@@ -12,6 +12,9 @@ export default function BlogDetails() {
   const [openTOC, setOpenTOC] = useState(true);
   const [loading, setLoading] = useState(true);
 
+  const BASE_URL =
+  import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+
   /* =========================
      FETCH DATA
   ========================= */
@@ -19,7 +22,7 @@ export default function BlogDetails() {
     setLoading(true);
 
     // Fetch current blog
-    fetch(`http://localhost:5000/api/blogs/${slug}`)
+    fetch(`${BASE_URL}/api/blogs/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setBlog(data);
@@ -27,7 +30,7 @@ export default function BlogDetails() {
       .catch((err) => console.error("Blog fetch error:", err));
 
     // Fetch all blogs
-    fetch("http://localhost:5000/api/blogs")
+    fetch(`${BASE_URL}/api/blogs`)
       .then((res) => res.json())
       .then((data) => {
         setAllBlogs(data);

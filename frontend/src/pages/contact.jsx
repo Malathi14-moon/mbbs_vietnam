@@ -58,6 +58,9 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const BASE_URL =
+  import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -65,7 +68,7 @@ export default function ContactPage() {
  const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await fetch("http://localhost:5000/send-email", {
+    const response = await fetch(`${BASE_URL}/send-email`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
