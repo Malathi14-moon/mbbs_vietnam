@@ -103,9 +103,17 @@ function parseHighlights(highlights) {
   }
 }
 
-function buildImageUrl(req, filename) {
+/* function buildImageUrl(req, filename) {
   if (!filename) return null;
   return `${req.protocol}://${req.get("host")}/uploads/${filename}`;
+}*/
+
+function buildImageUrl(req, filename) {
+  if (!filename) return null;
+
+  const BASE_URL = process.env.BASE_URL || `${req.protocol}://${req.get("host")}`;
+
+  return `${BASE_URL}/uploads/${filename}`;
 }
 
 /* =========================
