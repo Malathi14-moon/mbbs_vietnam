@@ -118,8 +118,8 @@ function normalizeImageUrl(req, image) {
 }
 
 function createEmailTransporter() {
-  const user = process.env.EMAIL_USER || "annanmurugan262@gmail.com";
-  const pass = process.env.EMAIL_PASS || "jchd nkyf fgrc guwq";
+  const user = process.env.EMAIL_USER;
+  const pass = process.env.EMAIL_PASS;
 
   return nodemailer.createTransport({
     service: "gmail",
@@ -322,14 +322,28 @@ app.post("/login", (req, res) => {
 app.post("/send-email", async (req, res) => {
   const { fullName, email, phone, message } = req.body;
 
+  // Validate required fields
+  if (!fullName || !email || !phone) {
+    return res.status(400).json({ message: "Missing required fields" });
+  }
+
   const transporter = createEmailTransporter();
-  const senderEmail = process.env.EMAIL_USER || "annanmurugan262@gmail.com";
-  const fromAddress = process.env.EMAIL_FROM || `"Vietnam MBBS" <${senderEmail}>`;
+
+  // ✅ Verify SMTP connection first
+  try {
+    await transporter.verify();
+  } catch (err) {
+    console.error("SMTP VERIFY FAILED:", err.message);
+    return res.status(500).json({ message: "Email config error: " + err.message });
+  }
+
+  const senderEmail = process.env.EMAIL_USER;
+  const fromAddress = `"Vietnam MBBS" <${senderEmail}>`;
 
   const mailOptions = {
     from: fromAddress,
     replyTo: email,
-    to: "malathimurugan1411@gmail.com", // where you want to receive emails
+    to: "malathimurugan1411@gmail.com",
     subject: `New Enquiry from ${fullName}`,
     text: `
       Name: ${fullName}
@@ -343,7 +357,7 @@ app.post("/send-email", async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Email sent successfully" });
   } catch (err) {
-    console.error("SEND EMAIL ERROR:", err);
+    console.error("SEND EMAIL ERROR:", err.message, err.response);
     res.status(500).json({ message: err.message });
   }
 });
@@ -351,13 +365,22 @@ app.post("/send-email", async (req, res) => {
 
 
 
+
 app.post("/api/enquiry", async (req, res) => {
   const { fullName, email, phone, state } = req.body;
 
+  if (!fullName || !email || !phone) {
+    return res.status(400).json({ message: "Missing required fields" });
+  }
+
   try {
     const transporter = createEmailTransporter();
-    const senderEmail = process.env.EMAIL_USER || "annanmurugan262@gmail.com";
-    const fromAddress = process.env.EMAIL_FROM || `"Vietnam MBBS" <${senderEmail}>`;
+
+    // ✅ verify first
+    await transporter.verify();
+
+    const senderEmail = process.env.EMAIL_USER; // ✅ no hardcoded fallback
+    const fromAddress = `"Vietnam MBBS" <${senderEmail}>`;
 
     const mailOptions = {
       from: fromAddress,
@@ -374,13 +397,13 @@ app.post("/api/enquiry", async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-
     res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    console.error("ENQUIRY EMAIL ERROR:", error);
-    res.status(500).json({ message: "Email sending failed" });
+    console.error("ENQUIRY EMAIL ERROR:", error.message, error.response);
+    res.status(500).json({ message: error.message }); // ✅ return actual error
   }
 });
+
 
 
 // blogs
