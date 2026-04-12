@@ -138,7 +138,7 @@ export default function AdmissionServices() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#faf9f7] flex flex-col font-sans text-gray-900">
+    <div className="min-h-screen bg-[#f5f5f5] flex flex-col font-sans text-gray-900">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
 
@@ -146,7 +146,7 @@ export default function AdmissionServices() {
         .serif { font-family: 'Playfair Display', Georgia, serif; }
 
         .hero-bg {
-          background: #1A0A0A;
+          background: #0a0a0a;
           position: relative;
           overflow: hidden;
         }
@@ -182,7 +182,7 @@ export default function AdmissionServices() {
 
         .service-card {
           background: #fff;
-          border: 1px solid #eae8e4;
+          border: 1px solid #e5e5e5;
           border-radius: 16px;
           padding: 2rem;
           position: relative;
@@ -225,8 +225,8 @@ export default function AdmissionServices() {
         .icon-wrap {
           width: 52px; height: 52px;
           border-radius: 12px;
-          background: #FFF5F5;
-          border: 1px solid #FFD5D5;
+          background: rgba(204,27,27,0.06);
+          border: 1px solid rgba(204,27,27,0.2);
           display: flex; align-items: center; justify-content: center;
           color: #CC1B1B;
           margin-bottom: 1.25rem;
@@ -244,13 +244,13 @@ export default function AdmissionServices() {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          background: #f8f6f2;
-          border: 1px solid #eae8e4;
+          background: #f0f0f0;
+          border: 1px solid #e5e5e5;
           border-radius: 100px;
           padding: 3px 10px;
           font-size: 11.5px;
           font-weight: 500;
-          color: #5a5550;
+          color: #555555;
           white-space: nowrap;
         }
         .highlight-pill::before {
@@ -269,7 +269,7 @@ export default function AdmissionServices() {
         }
 
         .cta-section {
-          background: #1A0A0A;
+          background: #0a0a0a;
           border-radius: 20px;
           overflow: hidden;
           position: relative;
@@ -332,7 +332,7 @@ export default function AdmissionServices() {
         }
         .why-card {
           background: #fff;
-          border: 1px solid #eae8e4;
+          border: 1px solid #e5e5e5;
           border-radius: 12px;
           padding: 1.5rem;
           text-align: center;
@@ -384,7 +384,7 @@ export default function AdmissionServices() {
         </section>
 
         {/* ─── WHY CHOOSE US STRIP ─── */}
-        <section style={{ background: "#fff", borderBottom: "1px solid #eae8e4", padding: "2rem 1.5rem" }}>
+        <section style={{ background: "#fff", borderBottom: "1px solid #e5e5e5", padding: "2rem 1.5rem" }}>
           <div className="max-w-5xl mx-auto why-grid">
             {[
               { icon: "🎓", title: "NMC Compliant", sub: "All universities are NMC & WHO recognised" },
@@ -395,25 +395,25 @@ export default function AdmissionServices() {
             ].map((item) => (
               <div key={item.title} className="why-card">
                 <div className="why-icon">{item.icon}</div>
-                <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "#1a2f5e", marginBottom: "4px" }}>{item.title}</div>
-                <div style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.5 }}>{item.sub}</div>
+                <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "#111111", marginBottom: "4px" }}>{item.title}</div>
+                <div style={{ fontSize: "0.8rem", color: "#777", lineHeight: 1.5 }}>{item.sub}</div>
               </div>
             ))}
           </div>
         </section>
 
         {/* ─── SERVICES GRID ─── */}
-        <main style={{ background: "#faf9f7", padding: "5rem 1.5rem" }}>
+        <main style={{ background: "#f5f5f5", padding: "5rem 1.5rem" }}>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-14">
               <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CC1B1B", marginBottom: "0.5rem" }}>
                 What We Offer
               </p>
-              <h2 className="serif" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, color: "#1a2f5e", marginBottom: "0.75rem", lineHeight: 1.2 }}>
+              <h2 className="serif" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, color: "#111", marginBottom: "0.75rem", lineHeight: 1.2 }}>
                 9 Steps to Your MBBS in Vietnam
               </h2>
               <div className="section-divider" />
-              <p style={{ color: "#888", fontSize: "1rem", maxWidth: "520px", margin: "1rem auto 0", lineHeight: 1.7 }}>
+              <p style={{ color: "#777", fontSize: "1rem", maxWidth: "520px", margin: "1rem auto 0", lineHeight: 1.7 }}>
                 Our structured process ensures nothing is missed — from your first enquiry to your first day on campus.
               </p>
             </div>
@@ -430,11 +430,11 @@ export default function AdmissionServices() {
 
                   <div className="icon-wrap">{service.icon}</div>
 
-                  <h3 className="serif" style={{ fontSize: "1.15rem", fontWeight: 700, color: "#1a2f5e", marginBottom: "0.625rem", lineHeight: 1.35, paddingRight: "2rem" }}>
+                  <h3 className="serif" style={{ fontSize: "1.15rem", fontWeight: 700, color: "#111", marginBottom: "0.625rem", lineHeight: 1.35, paddingRight: "2rem" }}>
                     {service.title}
                   </h3>
 
-                  <p style={{ fontSize: "0.875rem", color: "#666", lineHeight: 1.75, marginBottom: "1.25rem" }}>
+                  <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.75, marginBottom: "1.25rem" }}>
                     {service.description}
                   </p>
 
