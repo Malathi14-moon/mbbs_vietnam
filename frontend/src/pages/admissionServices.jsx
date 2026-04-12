@@ -130,6 +130,14 @@ const stats = [
   { value: "24/7", label: "Student Support" },
 ];
 
+const whyItems = [
+  { icon: "🎓", title: "NMC Compliant", sub: "NMC & WHO recognised universities" },
+  { icon: "🇮🇳", title: "India-Focused", sub: "Indian faculty, food & community" },
+  { icon: "✈️", title: "~4–5 Hr Flight", sub: "Vietnam — closest MBBS destination" },
+  { icon: "💰", title: "₹3.5L/Year", sub: "Affordable fees, no hidden costs" },
+  { icon: "📋", title: "NEXT Aligned", sub: "Curriculum built for NEXT success" },
+];
+
 export default function AdmissionServices() {
   const [activeCard, setActiveCard] = useState(null);
 
@@ -138,15 +146,14 @@ export default function AdmissionServices() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] flex flex-col font-sans text-gray-900">
+    <div style={{ minHeight: "100vh", background: "#f5f5f5", display: "flex", flexDirection: "column", fontFamily: "'DM Sans', sans-serif", color: "#111" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
-
-        .page-root { font-family: 'DM Sans', sans-serif; }
         .serif { font-family: 'Playfair Display', Georgia, serif; }
 
+        /* ── HERO ── */
         .hero-bg {
-          background: #0a0a0a;
+          background: #CC1B1B;
           position: relative;
           overflow: hidden;
         }
@@ -154,43 +161,72 @@ export default function AdmissionServices() {
           content: '';
           position: absolute;
           inset: 0;
-          background: 
-            radial-gradient(ellipse 60% 80% at 15% 50%, rgba(204,27,27,0.18) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 70% at 85% 30%, rgba(245,197,24,0.10) 0%, transparent 60%);
+          background:
+            radial-gradient(ellipse 50% 80% at 0% 100%, rgba(0,0,0,0.25) 0%, transparent 60%),
+            radial-gradient(ellipse 40% 60% at 100% 0%, rgba(245,197,24,0.18) 0%, transparent 55%);
           pointer-events: none;
         }
         .hero-grid-pattern {
           position: absolute;
           inset: 0;
-          background-image: 
-            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-          background-size: 48px 48px;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+          background-size: 44px 44px;
           pointer-events: none;
         }
 
+        /* ── STAT CARDS ── */
         .stat-card {
-          border: 1px solid rgba(255,255,255,0.08);
-          background: rgba(255,255,255,0.04);
-          backdrop-filter: blur(4px);
+          border: 1px solid rgba(255,255,255,0.25);
+          background: rgba(255,255,255,0.12);
           border-radius: 12px;
           padding: 1.25rem 1.5rem;
           text-align: center;
           transition: border-color 0.2s, background 0.2s;
         }
-        .stat-card:hover { border-color: rgba(204,27,27,0.5); background: rgba(204,27,27,0.06); }
+        .stat-card:hover {
+          border-color: #F5C518;
+          background: rgba(245,197,24,0.12);
+        }
 
+        /* ── WHY STRIP ── */
+        .why-strip {
+          background: #fff;
+          border-bottom: 3px solid #F5C518;
+          padding: 2rem 1.5rem;
+        }
+        .why-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1rem;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .why-card {
+          background: #fff;
+          border: 1.5px solid #e5e5e5;
+          border-radius: 12px;
+          padding: 1.25rem;
+          text-align: center;
+          transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .why-card:hover {
+          border-color: #CC1B1B;
+          box-shadow: 0 4px 16px rgba(204,27,27,0.10);
+        }
+
+        /* ── SERVICE CARDS ── */
         .service-card {
           background: #fff;
-          border: 1px solid #e5e5e5;
+          border: 1.5px solid #e5e5e5;
           border-radius: 16px;
           padding: 2rem;
           position: relative;
           overflow: hidden;
           transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
-          cursor: default;
         }
-        .service-card::before {
+        .service-card::after {
           content: '';
           position: absolute;
           top: 0; left: 0; right: 0;
@@ -199,61 +235,61 @@ export default function AdmissionServices() {
           transform: scaleX(0);
           transform-origin: left;
           transition: transform 0.3s ease;
-          border-radius: 16px 16px 0 0;
         }
         .service-card:hover {
-          box-shadow: 0 12px 40px rgba(204,27,27,0.10), 0 2px 8px rgba(0,0,0,0.05);
-          border-color: #ddd;
+          box-shadow: 0 12px 36px rgba(204,27,27,0.12);
+          border-color: rgba(204,27,27,0.25);
           transform: translateY(-3px);
         }
-        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover::after { transform: scaleX(1); }
 
-        .step-badge {
+        .step-num {
           font-family: 'Playfair Display', serif;
-          font-size: 3.5rem;
+          font-size: 3.75rem;
           font-weight: 900;
           color: rgba(204,27,27,0.07);
           position: absolute;
-          top: 1rem;
+          top: 0.75rem;
           right: 1.25rem;
           line-height: 1;
           user-select: none;
           transition: color 0.25s;
         }
-        .service-card:hover .step-badge { color: rgba(204,27,27,0.12); }
+        .service-card:hover .step-num { color: rgba(204,27,27,0.14); }
 
-        .icon-wrap {
-          width: 52px; height: 52px;
-          border-radius: 12px;
-          background: rgba(204,27,27,0.06);
-          border: 1px solid rgba(204,27,27,0.2);
+        .icon-box {
+          width: 50px; height: 50px;
+          border-radius: 10px;
+          background: rgba(204,27,27,0.07);
+          border: 1.5px solid rgba(204,27,27,0.18);
           display: flex; align-items: center; justify-content: center;
           color: #CC1B1B;
           margin-bottom: 1.25rem;
-          transition: background 0.25s, border-color 0.25s;
+          transition: background 0.25s, border-color 0.25s, color 0.25s;
           flex-shrink: 0;
         }
-        .service-card:hover .icon-wrap {
+        .service-card:hover .icon-box {
           background: #CC1B1B;
           border-color: #CC1B1B;
           color: #fff;
         }
-        .icon-wrap svg { width: 24px; height: 24px; }
+        .icon-box svg { width: 22px; height: 22px; }
 
-        .highlight-pill {
+        /* ── PILLS ── */
+        .pill {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          background: #f0f0f0;
-          border: 1px solid #e5e5e5;
+          background: #f2f2f2;
+          border: 1px solid #e0e0e0;
           border-radius: 100px;
           padding: 3px 10px;
-          font-size: 11.5px;
+          font-size: 11px;
           font-weight: 500;
-          color: #555555;
+          color: #555;
           white-space: nowrap;
         }
-        .highlight-pill::before {
+        .pill::before {
           content: '';
           width: 5px; height: 5px;
           border-radius: 50%;
@@ -261,233 +297,206 @@ export default function AdmissionServices() {
           flex-shrink: 0;
         }
 
-        .section-divider {
+        /* ── DIVIDER ── */
+        .gold-bar {
           width: 48px; height: 3px;
-          background: linear-gradient(90deg, #CC1B1B, #F5C518);
+          background: #F5C518;
           border-radius: 2px;
           margin: 0.75rem auto 0;
         }
 
-        .cta-section {
-          background: #0a0a0a;
+        /* ── CTA SECTION ── */
+        .cta-wrap {
+          background: #CC1B1B;
           border-radius: 20px;
           overflow: hidden;
           position: relative;
         }
-        .cta-section::before {
+        .cta-wrap::before {
           content: '';
           position: absolute;
           inset: 0;
-          background: radial-gradient(ellipse 70% 100% at 100% 50%, rgba(204,27,27,0.15) 0%, transparent 65%);
+          background:
+            radial-gradient(ellipse 55% 90% at 100% 50%, rgba(245,197,24,0.18) 0%, transparent 60%),
+            radial-gradient(ellipse 40% 60% at 0% 100%, rgba(0,0,0,0.2) 0%, transparent 55%);
           pointer-events: none;
         }
 
-        .btn-primary {
+        /* ── BUTTONS ── */
+        .btn-gold {
           display: inline-flex; align-items: center; justify-content: center;
           padding: 0.875rem 2rem;
-          background: #CC1B1B;
-          color: #fff;
-          font-weight: 600;
+          background: #F5C518;
+          color: #111;
+          font-weight: 700;
           font-size: 0.9375rem;
           border-radius: 10px;
           text-decoration: none;
           transition: background 0.2s, transform 0.15s;
           border: none;
+          cursor: pointer;
         }
-        .btn-primary:hover { background: #b01616; transform: translateY(-1px); }
+        .btn-gold:hover { background: #e0b315; transform: translateY(-1px); }
 
-        .btn-outline {
+        .btn-wht {
           display: inline-flex; align-items: center; justify-content: center;
           padding: 0.875rem 2rem;
-          background: transparent;
+          background: rgba(255,255,255,0.15);
           color: #fff;
           font-weight: 600;
           font-size: 0.9375rem;
           border-radius: 10px;
           text-decoration: none;
-          border: 1.5px solid rgba(255,255,255,0.25);
+          border: 1.5px solid rgba(255,255,255,0.4);
           transition: background 0.2s, border-color 0.2s;
         }
-        .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.45); }
+        .btn-wht:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.7); }
 
-        .process-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          background: rgba(245,197,24,0.12);
-          border: 1px solid rgba(245,197,24,0.25);
+        /* ── SERVICE BADGE ── */
+        .badge-gold {
+          display: inline-flex; align-items: center; gap: 6px;
+          background: #F5C518;
+          color: #111;
           border-radius: 100px;
-          padding: 5px 14px;
+          padding: 5px 16px;
           font-size: 11px;
-          font-weight: 600;
+          font-weight: 700;
           letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: #F5C518;
         }
 
-        .why-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.25rem;
-        }
-        .why-card {
-          background: #fff;
-          border: 1px solid #e5e5e5;
-          border-radius: 12px;
-          padding: 1.5rem;
-          text-align: center;
-          transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .why-card:hover {
-          border-color: #CC1B1B;
-          box-shadow: 0 4px 16px rgba(204,27,27,0.08);
-        }
-        .why-icon {
-          font-size: 1.75rem;
-          margin-bottom: 0.75rem;
+        /* ── SERVICES BG SECTION ── */
+        .services-section {
+          background: #f5f5f5;
+          padding: 5rem 1.5rem;
         }
       `}</style>
 
-      <div className="page-root">
-        <Header />
+      <Header />
 
-        {/* ─── HERO ─── */}
-        <section className="hero-bg py-20 px-4">
-          <div className="hero-grid-pattern" />
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <div className="process-badge mb-6 inline-flex">Our Services</div>
+      {/* ─── HERO ─── */}
+      <section className="hero-bg" style={{ padding: "5rem 1.5rem" }}>
+        <div className="hero-grid-pattern" />
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
 
-            <h1
-              className="serif text-white mb-6 leading-tight"
-              style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 900 }}
-            >
-              End-to-End{" "}
-              <span style={{ color: "#CC1B1B" }}>MBBS Admission</span>
-              <br />
-              Support for Indian Students
-            </h1>
+          <div className="badge-gold" style={{ marginBottom: "1.5rem" }}>Our Services</div>
 
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1.0625rem", maxWidth: "620px", margin: "0 auto 2.5rem", lineHeight: 1.75 }}>
-              From selecting the right NMC-recognised university in Vietnam to settling you in on campus — we provide comprehensive, transparent, and personalised guidance at every stage of your journey.
-            </p>
+          <h1
+            className="serif"
+            style={{ color: "#fff", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 900, lineHeight: 1.15, marginBottom: "1.25rem" }}
+          >
+            End-to-End{" "}
+            <span style={{ color: "#F5C518" }}>MBBS Admission</span>
+            <br />
+            Support for Indian Students
+          </h1>
 
-            {/* Stats row */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
-              {stats.map((s) => (
-                <div key={s.label} className="stat-card">
-                  <div className="serif" style={{ fontSize: "1.875rem", fontWeight: 900, color: "#F5C518", lineHeight: 1 }}>{s.value}</div>
-                  <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.55)", marginTop: "4px", fontWeight: 500, letterSpacing: "0.02em" }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem", maxWidth: "600px", margin: "0 auto 2.75rem", lineHeight: 1.8 }}>
+            From selecting the right NMC-recognised university in Vietnam to settling you in on campus — we provide comprehensive, transparent, and personalised guidance at every stage of your journey.
+          </p>
 
-        {/* ─── WHY CHOOSE US STRIP ─── */}
-        <section style={{ background: "#fff", borderBottom: "1px solid #e5e5e5", padding: "2rem 1.5rem" }}>
-          <div className="max-w-5xl mx-auto why-grid">
-            {[
-              { icon: "🎓", title: "NMC Compliant", sub: "All universities are NMC & WHO recognised" },
-              { icon: "🇮🇳", title: "India-Focused", sub: "Indian faculty, food & support community" },
-              { icon: "✈️", title: "~4–5 Hr Flight", sub: "Vietnam — the closest MBBS destination" },
-              { icon: "💰", title: "₹3.5L/Year", sub: "Affordable fees with no hidden costs" },
-              { icon: "📋", title: "NEXT Aligned", sub: "Curriculum designed for NEXT exam success" },
-            ].map((item) => (
-              <div key={item.title} className="why-card">
-                <div className="why-icon">{item.icon}</div>
-                <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "#111111", marginBottom: "4px" }}>{item.title}</div>
-                <div style={{ fontSize: "0.8rem", color: "#777", lineHeight: 1.5 }}>{item.sub}</div>
+          {/* Stats */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "0.75rem", maxWidth: "640px", margin: "0 auto" }}>
+            {stats.map((s) => (
+              <div key={s.label} className="stat-card">
+                <div className="serif" style={{ fontSize: "2rem", fontWeight: 900, color: "#F5C518", lineHeight: 1 }}>{s.value}</div>
+                <div style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.8)", marginTop: "5px", fontWeight: 500, letterSpacing: "0.03em" }}>{s.label}</div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ─── SERVICES GRID ─── */}
-        <main style={{ background: "#f5f5f5", padding: "5rem 1.5rem" }}>
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-14">
-              <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CC1B1B", marginBottom: "0.5rem" }}>
-                What We Offer
-              </p>
-              <h2 className="serif" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, color: "#111", marginBottom: "0.75rem", lineHeight: 1.2 }}>
-                9 Steps to Your MBBS in Vietnam
-              </h2>
-              <div className="section-divider" />
-              <p style={{ color: "#777", fontSize: "1rem", maxWidth: "520px", margin: "1rem auto 0", lineHeight: 1.7 }}>
-                Our structured process ensures nothing is missed — from your first enquiry to your first day on campus.
-              </p>
+      {/* ─── WHY STRIP ─── */}
+      <section className="why-strip">
+        <div className="why-grid">
+          {whyItems.map((item) => (
+            <div key={item.title} className="why-card">
+              <div style={{ fontSize: "1.6rem", marginBottom: "0.5rem" }}>{item.icon}</div>
+              <div style={{ fontWeight: 700, fontSize: "0.875rem", color: "#CC1B1B", marginBottom: "3px" }}>{item.title}</div>
+              <div style={{ fontSize: "0.775rem", color: "#666", lineHeight: 1.5 }}>{item.sub}</div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service) => (
-                <div
-                  key={service.id}
-                  className="service-card"
-                  onMouseEnter={() => setActiveCard(service.id)}
-                  onMouseLeave={() => setActiveCard(null)}
-                >
-                  <span className="step-badge">{service.step}</span>
-
-                  <div className="icon-wrap">{service.icon}</div>
-
-                  <h3 className="serif" style={{ fontSize: "1.15rem", fontWeight: 700, color: "#111", marginBottom: "0.625rem", lineHeight: 1.35, paddingRight: "2rem" }}>
-                    {service.title}
-                  </h3>
-
-                  <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-                    {service.description}
-                  </p>
-
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                    {service.highlights.map((h) => (
-                      <span key={h} className="highlight-pill">{h}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* ─── SERVICES GRID ─── */}
+      <main className="services-section">
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+            <p style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#CC1B1B", marginBottom: "0.5rem" }}>
+              What We Offer
+            </p>
+            <h2 className="serif" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, color: "#111", marginBottom: "0.5rem", lineHeight: 1.2 }}>
+              9 Steps to Your MBBS in Vietnam
+            </h2>
+            <div className="gold-bar" />
+            <p style={{ color: "#666", fontSize: "1rem", maxWidth: "500px", margin: "1rem auto 0", lineHeight: 1.75 }}>
+              A structured, proven process — from your first enquiry to your first day on campus.
+            </p>
           </div>
 
-          {/* ─── CTA ─── */}
-          <div className="max-w-5xl mx-auto mt-20">
-            <div className="cta-section p-10 sm:p-14">
-              <div style={{ position: "relative", zIndex: 1 }}>
-                <div className="process-badge mb-5 inline-flex">Take the First Step</div>
-                <h2
-                  className="serif text-white mb-4"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, lineHeight: 1.25 }}
-                >
-                  Ready to Begin Your <span style={{ color: "#CC1B1B" }}>MBBS Journey</span>?
-                </h2>
-                <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1rem", maxWidth: "540px", lineHeight: 1.75, marginBottom: "2rem" }}>
-                  Speak to our counsellors today for a free eligibility assessment and personalised roadmap. Thousands of Indian students have made Vietnam their medical education destination — your story starts here.
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="service-card"
+                onMouseEnter={() => setActiveCard(service.id)}
+                onMouseLeave={() => setActiveCard(null)}
+              >
+                <span className="step-num">{service.step}</span>
+                <div className="icon-box">{service.icon}</div>
+                <h3 className="serif" style={{ fontSize: "1.125rem", fontWeight: 700, color: "#111", marginBottom: "0.625rem", lineHeight: 1.35, paddingRight: "2.5rem" }}>
+                  {service.title}
+                </h3>
+                <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.8, marginBottom: "1.25rem" }}>
+                  {service.description}
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
-                  <a href="/contact" className="btn-primary">
-                    Get Free Counselling
-                    <svg style={{ marginLeft: "8px", width: "16px", height: "16px" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://wa.me/919150430545"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-outline"
-                  >
-                    <svg style={{ marginRight: "8px", width: "17px", height: "17px" }} viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    WhatsApp a Counsellor
-                  </a>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                  {service.highlights.map((h) => (
+                    <span key={h} className="pill">{h}</span>
+                  ))}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ─── CTA ─── */}
+        <div style={{ maxWidth: "1000px", margin: "5rem auto 0" }}>
+          <div className="cta-wrap" style={{ padding: "3.5rem 3rem" }}>
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <div className="badge-gold" style={{ marginBottom: "1.25rem" }}>Take the First Step</div>
+              <h2
+                className="serif"
+                style={{ color: "#fff", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, lineHeight: 1.25, marginBottom: "1rem" }}
+              >
+                Ready to Begin Your{" "}
+                <span style={{ color: "#F5C518" }}>MBBS Journey</span>?
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "1rem", maxWidth: "540px", lineHeight: 1.8, marginBottom: "2rem" }}>
+                Speak to our counsellors today for a free eligibility assessment and personalised roadmap. Thousands of Indian students have made Vietnam their medical education destination — your story starts here.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.875rem" }}>
+                <a href="/contact" className="btn-gold">
+                  Get Free Counselling
+                  <svg style={{ marginLeft: "8px", width: "15px", height: "15px" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+                <a href="https://wa.me/919150430545" target="_blank" rel="noreferrer" className="btn-wht">
+                  <svg style={{ marginRight: "8px", width: "17px", height: "17px" }} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  WhatsApp a Counsellor
+                </a>
               </div>
             </div>
           </div>
-        </main>
+        </div>
+      </main>
 
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
