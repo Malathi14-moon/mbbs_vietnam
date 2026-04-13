@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 /*const API = "http://localhost:5000/universities";*/
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
 const API = `${BASE_URL}/universities`;
 
 const stats = [
@@ -500,6 +500,17 @@ export default function Home() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <a
   href="https://wa.me/919003420057?text=Hi%20I%20am%20interested"
   target="_blank"
@@ -521,8 +532,14 @@ export default function Home() {
 
 
 
-        <Footer />
+
+
+
+
+        
       </section>
+
+      <Footer />
     </div>
   );
 }

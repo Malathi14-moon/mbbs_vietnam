@@ -773,7 +773,7 @@ export default function ContactPage() {
 
               <button type="submit" className="submit-btn">
                 <SendIcon />
-                Submit Enquiry
+                Submit
               </button>
 
               {submitted && (
