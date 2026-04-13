@@ -495,37 +495,7 @@ export default function Home() {
 
 
 
-<div style={{ maxWidth: "1000px", margin: "5rem auto 0" }}>
-          <div className="cta-wrap" style={{ padding: "3.5rem 3rem" }}>
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <div className="badge-gold" style={{ marginBottom: "1.25rem" }}>Take the First Step</div>
-              <h2
-                className="serif"
-                style={{ color: "#fff", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, lineHeight: 1.25, marginBottom: "1rem" }}
-              >
-                Ready to Begin Your{" "}
-                <span style={{ color: "#F5C518" }}>MBBS Journey</span>?
-              </h2>
-              <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "1rem", maxWidth: "540px", lineHeight: 1.8, marginBottom: "2rem" }}>
-                Speak to our counsellors today for a free eligibility assessment and personalised roadmap. Thousands of Indian students have made Vietnam their medical education destination — your story starts here.
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.875rem" }}>
-                <a href="/contact" className="btn-gold">
-                  Get Free Counselling
-                  <svg style={{ marginLeft: "8px", width: "15px", height: "15px" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-                <a href="https://wa.me/919003420057" target="_blank" rel="noreferrer" className="btn-wht">
-                  <svg style={{ marginRight: "8px", width: "17px", height: "17px" }} viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5 -.669 -.51 -.173 -.008 -.371 -.01 -.57 -.01 -.198 0 -.52 .074 -.792 .372 -.272 .297 -1.04 1.016 -1.04 2.479 0 1.462 1.065 2.875 1.2₁₃ 3.0７₄ .₁₄₉ .₁₉₈ ₂₀₉₆ ₃.₂ ₅.₀₇₇ ₄.₄₈₇ .₇₀₉ .₃₀₆ ₁.₂₆₂ .₄₈₉ ₁.₆⁹⁴ .⁶²⁵ .⁷¹² .²²⁷ ₁.³⁶ .¹⁹⁵ ₁.⁸⁷¹ .¹¹⁸ .⁵⁷¹ -." />
-                  </svg>
-                  WhatsApp a Counsellor
-                </a>
-              </div>
-            </div>
-          </div>
-        </div> 
+
 
 
 
