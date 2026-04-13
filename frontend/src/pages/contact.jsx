@@ -331,7 +331,7 @@ export default function ContactPage() {
               </div>
             ))}
 
-            <button className="wa-btn" onClick={() => window.open("https://wa.me/919150430545", "_blank")}>
+            <button className="wa-btn" onClick={() => window.open("https://wa.me/919003420057", "_blank")}>
               <WhatsAppIcon />
               Chat on WhatsApp
             </button>

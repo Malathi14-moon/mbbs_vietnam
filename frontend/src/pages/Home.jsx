@@ -301,7 +301,7 @@ export default function Home() {
 
 
 <a
-  href="https://wa.me/916382826273?text=Hi%20I%20am%20interested"
+  href="https://wa.me/919003420057?text=Hi%20I%20am%20interested"
   target="_blank"
   rel="noopener noreferrer"
   class="fixed bottom-5 right-5 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition duration-300"
