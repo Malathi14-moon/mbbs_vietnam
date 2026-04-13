@@ -151,6 +151,11 @@ export default function AdmissionServices() {
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
         .serif { font-family: 'Playfair Display', Georgia, serif; }
 
+
+
+
+
+
         /* ── HERO ── */
         .hero-bg {
           background: #CC1B1B;
@@ -374,7 +379,156 @@ export default function AdmissionServices() {
 
       <Header />
 
-      {/* ─── HERO ─── */}
+
+
+      <section
+  style={{
+    position: "relative",
+    padding: "5rem 1.5rem",
+    overflow: "hidden",
+    minHeight: "560px",
+    display: "flex",
+    alignItems: "center",
+  }}
+>
+  {/* Background image */}
+  <img
+    src="https://img.freepik.com/premium-photo/several-indian-physicians-are-positioned-facing-camera-while-holding-their-hands-folded-generative-ai_1042426-17097.jpg"
+    alt="MBBS in Vietnam"
+
+    className="absolute inset-0 w-full h-full object-cover object-center z-0"
+    /* style={{
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "center",
+    }}*/
+  />
+
+  {/* Light overlay — just enough for text, image stays visible */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      background:
+        "linear-gradient(to right, rgba(0,0,0,0.62) 35%, rgba(0,0,0,0.28) 65%, rgba(0,0,0,0.10) 100%)",
+    }}
+  />
+
+  {/* Content */}
+  <div
+    style={{
+      position: "relative",
+      zIndex: 1,
+      maxWidth: "860px",
+      margin: "0 auto",
+      width: "100%",
+      textAlign: "left",
+      paddingLeft: "clamp(1rem, 5vw, 3rem)",
+    }}
+  >
+    {/* Badge */}
+    <div
+      style={{
+        display: "inline-block",
+        marginBottom: "1.25rem",
+        padding: "5px 16px",
+        borderRadius: "999px",
+        border: "1px solid rgba(245,197,24,0.5)",
+        background: "rgba(245,197,24,0.15)",
+        color: "#F5C518",
+        fontSize: "0.72rem",
+        fontWeight: 700,
+        letterSpacing: "0.12em",
+        textTransform: "uppercase",
+      }}
+    >
+      Our Services
+    </div>
+
+    {/* Heading */}
+    <h1
+      className="serif"
+      style={{
+        color: "#ffffff",
+        fontSize: "clamp(2rem, 4.5vw, 3.25rem)",
+        fontWeight: 900,
+        lineHeight: 1.18,
+        marginBottom: "1.1rem",
+        textShadow: "0 1px 12px rgba(0,0,0,0.4)",
+      }}
+    >
+      End-to-End{" "}
+      <span style={{ color: "#F5C518" }}>MBBS Admission</span>
+      <br />
+      Support for Indian Students
+    </h1>
+
+    {/* Subtext */}
+    <p
+      style={{
+        color: "rgba(255,255,255,0.88)",
+        fontSize: "1rem",
+        maxWidth: "500px",
+        lineHeight: 1.8,
+        marginBottom: "2.25rem",
+        textShadow: "0 1px 6px rgba(0,0,0,0.5)",
+      }}
+    >
+      From selecting the right NMC-recognised university in Vietnam to
+      settling you in on campus — comprehensive, transparent, and
+      personalised guidance at every stage.
+    </p>
+
+    {/* Stats */}
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.65rem" }}>
+      {stats.map((s) => (
+        <div
+          key={s.label}
+          style={{
+            textAlign: "center",
+            padding: "0.75rem 1.35rem",
+            borderRadius: "10px",
+            border: "1px solid rgba(255,255,255,0.18)",
+            background: "rgba(0,0,0,0.28)",
+            backdropFilter: "blur(8px)",
+            minWidth: "115px",
+          }}
+        >
+          <div
+            className="serif"
+            style={{
+              fontSize: "1.75rem",
+              fontWeight: 900,
+              color: "#F5C518",
+              lineHeight: 1,
+            }}
+          >
+            {s.value}
+          </div>
+          <div
+            style={{
+              fontSize: "0.68rem",
+              color: "rgba(255,255,255,0.80)",
+              marginTop: "4px",
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+            }}
+          >
+            {s.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+      {/* ─── HERO ─── 
       <section className="hero-bg" style={{ padding: "5rem 1.5rem" }}>
         <div className="hero-grid-pattern" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
@@ -393,9 +547,9 @@ export default function AdmissionServices() {
 
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem", maxWidth: "600px", margin: "0 auto 2.75rem", lineHeight: 1.8 }}>
             From selecting the right NMC-recognised university in Vietnam to settling you in on campus — we provide comprehensive, transparent, and personalised guidance at every stage of your journey.
-          </p>
+          </p> 
 
-          {/* Stats */}
+          {/* Stats 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "0.75rem", maxWidth: "640px", margin: "0 auto" }}>
             {stats.map((s) => (
               <div key={s.label} className="stat-card">
@@ -405,9 +559,9 @@ export default function AdmissionServices() {
             ))}
           </div>
         </div>
-      </section>
+      </section>  */}
 
-      {/* ─── WHY STRIP ─── */}
+      {/* ─── WHY STRIP ─── 
       <section className="why-strip">
         <div className="why-grid">
           {whyItems.map((item) => (
@@ -418,7 +572,7 @@ export default function AdmissionServices() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ─── SERVICES GRID ─── */}
       <main className="services-section">

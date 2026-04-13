@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 /*const API = "http://localhost:5000/universities";*/
 
-const BASE_URL = import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL;
 const API = `${BASE_URL}/universities`;
 
 const stats = [
@@ -132,7 +132,7 @@ export default function Home() {
           className="w-full h-[600px]"
         >
           <SwiperSlide>
-            <div className="relative w-full h-full">
+          { /* <div className="relative w-full h-full">
               <img
                 src="https://i0.wp.com/prodirektgroup.com/wp-content/uploads/2022/09/PRODIREKT-is-a-leading-trusted-advisor-for-students-who-want-to-study-abroad.jpg"
                 alt="Vietnam"
@@ -171,13 +171,78 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+
+            <div className="relative w-full h-full">
+  <img
+    src="https://i0.wp.com/prodirektgroup.com/wp-content/uploads/2022/09/PRODIREKT-is-a-leading-trusted-advisor-for-students-who-want-to-study-abroad.jpg"
+    alt="Vietnam"
+    className="w-full h-full object-cover"
+  />
+
+  {/* Deep gradient overlay — stronger in center for text clarity */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/20" />
+
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="max-w-3xl text-center px-6">
+
+      {/* Eyebrow badge */}
+      <span className="inline-block mb-4 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-red-200 border border-red-400/50 bg-red-800/20 rounded-full">
+        For Indian Students · After 12th · NEET Accepted
+      </span>
+
+      {/* Heading with text shadow */}
+      <h1
+        className="font-serif text-5xl font-extrabold text-white mb-2 leading-tight"
+        style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.9)" }}
+      >
+        Dreaming of MBBS?
+      </h1>
+      <h2
+        className="font-serif text-4xl font-extrabold text-red-400 mb-5 leading-tight"
+        style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.95)" }}
+      >
+        Vietnam Makes It Possible!
+      </h2>
+
+      {/* Frosted glass tagline pill */}
+      <p
+        className="inline-block text-white/90 text-base mb-7 px-5 py-2.5 rounded-xl border border-white/15"
+        style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)" }}
+      >
+        Direct admission · No donation · No IELTS required
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex justify-center gap-4">
+        <button
+          type="button"
+          onClick={() => setIsModalOpen(true)}
+          className="px-7 py-3.5 bg-[#CC1B1B] text-white font-bold rounded-xl hover:bg-[#b01616] shadow-lg shadow-red-900/50"
+        >
+          Apply Now →
+        </button>
+        <button
+          type="button"
+          onClick={() => setIsModalOpen(true)}
+          className="px-7 py-3.5 bg-[#F5C518] text-yellow-900 font-bold rounded-xl hover:bg-yellow-400 shadow-lg shadow-yellow-900/30"
+        >
+          Download Brochure
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="relative w-full h-full">
+           {/* <div className="relative w-full h-full">
               <img
-                src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1600&q=80"
+                src="https://th.bing.com/th/id/OIP.feHgQ4d-dF4wcUgUzy6GjwHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
                 alt="Vietnam"
                 className="w-full h-full object-cover"
               />
@@ -197,13 +262,60 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+
+           <div className="relative w-full h-full overflow-hidden">
+  <img
+    src="https://th.bing.com/th/id/OIP.feHgQ4d-dF4wcUgUzy6GjwHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+    alt="Vietnam"
+    className="w-full h-full object-cover object-center"
+  />
+
+  {/* Stronger overlay for light image */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-black/50" />
+
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="max-w-2xl text-center px-8">
+
+      {/* Eyebrow */}
+      <p className="text-yellow-300 text-sm font-semibold uppercase tracking-widest mb-4">
+        MBBS in Vietnam · 2026 Admissions
+      </p>
+
+      {/* Heading */}
+      <h1
+        className="font-serif text-5xl font-extrabold text-white leading-tight mb-4"
+        style={{ textShadow: "0 2px 16px rgba(0,0,0,0.7)" }}
+      >
+        Start Your Medical Career <br />
+        <span
+          className="text-[#F5C518]"
+          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
+        >
+          with Globally Recognized MBBS
+        </span>
+      </h1>
+
+      {/* Subtext */}
+      <p
+        className="text-white/85 text-lg leading-relaxed"
+        style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
+      >
+        Study in top NMC-approved universities with advanced hospitals,
+        experienced faculty, and affordable fees for Indian students.
+      </p>
+
+    </div>
+  </div>
+</div>
+
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="relative w-full h-full">
+           {/* <div className="relative w-full h-full">
               <img
-                src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=1600&q=80"
+                src="https://wallpapercave.com/wp/wp7425397.jpg"
                 alt="Campus"
                 className="w-full h-full object-cover"
               />
@@ -222,13 +334,94 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
+
+
+
+            <div className="relative w-full h-full">
+  <img
+    src="https://wallpapercave.com/wp/wp7425397.jpg"
+    alt="MBBS in Vietnam"
+    className="w-full h-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/50" />
+
+  <div className="absolute inset-0 flex items-center justify-center px-4">
+    <div className="max-w-5xl text-center text-white">
+
+      {/* Heading */}
+      <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+        Study MBBS in Vietnam 🇻🇳 <br />
+        <span className="text-yellow-400">
+          Affordable • Recognized • Career-Focused
+        </span>
+      </h1>
+
+      {/* Subtext */}
+      <p className="text-lg md:text-xl text-gray-200 mb-8">
+        Get direct admission to top NMC-approved universities with modern
+        hospitals, Indian curriculum support, and global career opportunities.
+      </p>
+
+    
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="px-8 py-3 bg-[#CC1B1B] rounded-xl font-semibold hover:bg-red-700 transition"
+        >
+          Apply Now →
+        </button>
+
+        <a
+          href="https://wa.me/919003420057?text=Hi%20I%20am%20interested%20in%20MBBS%20in%20Vietnam"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-3 bg-[#F5C518] rounded-xl font-semibold hover:bg-yellow-600 transition"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
           </SwiperSlide>
         </Swiper>
 
 
 
+         {/* Stats Section */}
 
+<div className="relative z-10 mt-[100px] mb-12 px-4">
+  <div className="max-w-5xl mx-auto">
+    <div
+      className="flex flex-wrap justify-center gap-6 bg-white rounded-2xl p-6 md:p-8"
+      style={{
+        boxShadow: "0 4px 6px -1px rgba(204,27,27,0.08), 0 20px 60px -10px rgba(204,27,27,0.15), 0 1px 3px rgba(0,0,0,0.06)"
+      }}
+    >
+      {stats.map((stat, index) => (
+        <div
+          key={stat.label}
+          className="text-center min-w-[120px] px-4"
+        >
+          {/* Divider between items */}
+          {index !== 0 && (
+            <div className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-3 w-px h-8 bg-gray-200" />
+          )}
+          <div className="text-2xl md:text-3xl font-bold text-[#CC1B1B]">
+            {stat.num}
+          </div>
+          <div className="text-sm text-gray-500 mt-0.5">
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
         <section className="mt-16 px-6">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-[#CC1B1B] mb-10">

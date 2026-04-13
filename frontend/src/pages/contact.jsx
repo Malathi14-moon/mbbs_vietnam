@@ -283,7 +283,7 @@ export default function ContactPage() {
 
       <Header />
 
-      {/* ── HERO ── */}
+      {/* ── HERO ── 
       <section className="contact-hero">
         <div className="hero-grid" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: "640px", margin: "0 auto" }}>
@@ -296,14 +296,254 @@ export default function ContactPage() {
             Our expert counsellors are ready to guide you toward your MBBS goals in Vietnam. Reach out — we respond within 24 hours.
           </p>
         </div>
-      </section>
+      </section> */}
+
+
+     <section
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "480px",
+    display: "flex",
+    alignItems: "center",
+    background: "#fff",
+  }}
+>
+  {/* Left red accent panel */}
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "42%",
+      height: "100%",
+      background: "linear-gradient(160deg, #CC1B1B 60%, #a01414 100%)",
+      clipPath: "polygon(0 0, 88% 0, 100% 100%, 0 100%)",
+      zIndex: 0,
+    }}
+  />
+
+  {/* Subtle dot texture on red panel */}
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "42%",
+      height: "100%",
+      backgroundImage:
+        "radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)",
+      backgroundSize: "22px 22px",
+      clipPath: "polygon(0 0, 88% 0, 100% 100%, 0 100%)",
+      zIndex: 1,
+    }}
+  />
+
+  {/* Main content */}
+  <div
+    style={{
+      position: "relative",
+      zIndex: 2,
+      maxWidth: "1200px",
+      width: "100%",
+      margin: "0 auto",
+      padding: "3.5rem clamp(1.5rem, 5vw, 4rem)",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr 1fr",
+      gap: "2rem",
+      alignItems: "center",
+    }}
+  >
+    {/* Column 1 — heading on red */}
+    <div>
+      <div
+        style={{
+          display: "inline-block",
+          marginBottom: "1.1rem",
+          padding: "4px 14px",
+          borderRadius: "999px",
+          border: "1px solid rgba(255,255,255,0.35)",
+          background: "rgba(255,255,255,0.15)",
+          color: "#fff",
+          fontSize: "0.68rem",
+          fontWeight: 700,
+          letterSpacing: "0.14em",
+          textTransform: "uppercase",
+        }}
+      >
+        Contact Us
+      </div>
+
+      <h1
+        className="serif"
+        style={{
+          color: "#ffffff",
+          fontSize: "clamp(1.9rem, 3.2vw, 2.75rem)",
+          fontWeight: 900,
+          lineHeight: 1.18,
+          marginBottom: "1rem",
+        }}
+      >
+        Let's Start a{" "}
+        <span
+          style={{
+            color: "#F5C518",
+            display: "block",
+          }}
+        >
+          Conversation
+        </span>
+      </h1>
+
+      <p
+        style={{
+          color: "rgba(255,255,255,0.82)",
+          fontSize: "0.92rem",
+          lineHeight: 1.75,
+          marginBottom: "1.75rem",
+        }}
+      >
+        Our expert counsellors are ready to guide you every step of the
+        way — from course selection to visa approval.
+      </p>
+
+      <button
+        type="button"
+        onClick={() => setIsModalOpen(true)}
+        style={{
+          padding: "11px 26px",
+          background: "#F5C518",
+          color: "#7a4f00",
+          fontWeight: 700,
+          fontSize: "0.88rem",
+          border: "none",
+          borderRadius: "10px",
+          cursor: "pointer",
+          boxShadow: "0 4px 18px rgba(0,0,0,0.2)",
+        }}
+      >
+        Enquire Now →
+      </button>
+    </div>
+
+    {/* Column 2 — contact info cards */}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.85rem",
+      }}
+    >
+      {[
+        {
+          icon: "📞",
+          label: "Call Us",
+          value: "+91 98765 43210",
+          sub: "Mon – Sat, 9 AM – 6 PM",
+        },
+        {
+          icon: "✉️",
+          label: "Email Us",
+          value: "info@vietnammbbs.in",
+          sub: "We reply within 24 hours",
+        },
+        {
+          icon: "📍",
+          label: "Our Office",
+          value: "Chennai, Tamil Nadu",
+          sub: "India Headquarters",
+        },
+      ].map((item) => (
+        <div
+          key={item.label}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "14px",
+            padding: "14px 18px",
+            borderRadius: "12px",
+            background: "#fff",
+            border: "1px solid #f0f0f0",
+            boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+          }}
+        >
+          <div
+            style={{
+              width: "42px",
+              height: "42px",
+              borderRadius: "10px",
+              background: "#fff5f5",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "18px",
+              flexShrink: 0,
+            }}
+          >
+            {item.icon}
+          </div>
+          <div>
+            <div
+              style={{
+                fontSize: "0.68rem",
+                fontWeight: 700,
+                color: "#CC1B1B",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                marginBottom: "2px",
+              }}
+            >
+              {item.label}
+            </div>
+            <div
+              style={{
+                fontSize: "0.9rem",
+                fontWeight: 700,
+                color: "#111",
+                marginBottom: "1px",
+              }}
+            >
+              {item.value}
+            </div>
+            <div style={{ fontSize: "0.75rem", color: "#888" }}>
+              {item.sub}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Column 3 — illustration */}
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <img
+        src="https://flowinsurance.com/wp-content/uploads/2022/03/Contact-Us-Cartoon.png"
+        alt="Contact illustration"
+        style={{
+          width: "100%",
+          maxWidth: "360px",
+          height: "auto",
+          objectFit: "contain",
+          filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.12))",
+        }}
+      />
+    </div>
+  </div>
+</section>
+      
+      
 
       {/* ── MAIN ── */}
       <main style={{ flex: 1, padding: "4rem 1.5rem" }}>
 
         <div className="contact-grid">
 
-          {/* ── INFO CARD ── */}
+          {/* ── INFO CARD ── 
           <div className="info-card">
             <div style={{ position: "relative", zIndex: 1 }}>
               <div style={{ width: "36px", height: "3px", background: "#F5C518", borderRadius: "2px", marginBottom: "1rem" }} />
@@ -335,7 +575,169 @@ export default function ContactPage() {
               <WhatsAppIcon />
               Chat on WhatsApp
             </button>
-          </div>
+          </div>  */}
+
+
+
+
+          <div
+  style={{
+    background: "#fff",
+    borderRadius: "16px",
+    padding: "2rem",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.06), 0 12px 40px rgba(204,27,27,0.10), 0 1px 2px rgba(0,0,0,0.04)",
+    border: "1px solid #f5f5f5",
+  }}
+>
+  <div style={{ position: "relative", zIndex: 1 }}>
+    <div
+      style={{
+        width: "36px",
+        height: "3px",
+        background: "#F5C518",
+        borderRadius: "2px",
+        marginBottom: "1rem",
+      }}
+    />
+    <h2
+      className="serif"
+      style={{
+        color: "#CC1B1B",
+        fontSize: "1.875rem",
+        fontWeight: 900,
+        lineHeight: 1.2,
+      }}
+    >
+      We're here<br />to help you.
+    </h2>
+    <p
+      style={{
+        color: "#666",
+        fontSize: "0.875rem",
+        marginTop: "0.5rem",
+        lineHeight: 1.7,
+      }}
+    >
+      Talk to our counsellors about MBBS admissions, visa, fees, and more.
+    </p>
+  </div>
+
+  {/* Divider */}
+  <div
+    style={{
+      height: "1px",
+      background: "linear-gradient(to right, #CC1B1B22, #F5C51822, transparent)",
+      margin: "1.5rem 0",
+    }}
+  />
+
+  {[
+    { icon: <PhoneIcon />, label: "Call Us", value: "90034 20057 | 72000 95846" },
+    { icon: <MailIcon />, label: "Email", value: "info@medviet.com" },
+    {
+      icon: <LocationIcon />,
+      label: "Office Address",
+      value: "38, Eswaran Koil Street (Lane Side), Alandur, Chennai – 16",
+    },
+  ].map(({ icon, label, value }) => (
+    <div
+      key={label}
+      style={{
+        display: "flex",
+        alignItems: "flex-start",
+        gap: "12px",
+        marginBottom: "1.1rem",
+      }}
+    >
+      {/* Icon bubble */}
+      <div
+        style={{
+          width: "38px",
+          height: "38px",
+          borderRadius: "10px",
+          background: "#fff5f5",
+          border: "1px solid #fde8e8",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          color: "#CC1B1B",
+        }}
+      >
+        {icon}
+      </div>
+
+      <div>
+        <p
+          style={{
+            color: "#F5C518",
+            fontSize: "10.5px",
+            textTransform: "uppercase",
+            letterSpacing: "0.09em",
+            fontWeight: 700,
+            marginBottom: "3px",
+          }}
+        >
+          {label}
+        </p>
+        <p
+          style={{
+            color: "#1a1a1a",
+            fontWeight: 600,
+            fontSize: "0.875rem",
+            lineHeight: 1.6,
+          }}
+        >
+          {value}
+        </p>
+      </div>
+    </div>
+  ))}
+
+  {/* Divider */}
+  <div
+    style={{
+      height: "1px",
+      background: "linear-gradient(to right, #CC1B1B22, #F5C51822, transparent)",
+      margin: "1.25rem 0",
+    }}
+  />
+
+  {/* WhatsApp button */}
+  <button
+    onClick={() => window.open("https://wa.me/919003420057", "_blank")}
+    style={{
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "10px",
+      padding: "12px",
+      background: "#fff",
+      border: "1.5px solid #25D366",
+      borderRadius: "10px",
+      color: "#25D366",
+      fontWeight: 700,
+      fontSize: "0.9rem",
+      cursor: "pointer",
+      transition: "all 0.2s",
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.background = "#25D366";
+      e.currentTarget.style.color = "#fff";
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.background = "#fff";
+      e.currentTarget.style.color = "#25D366";
+    }}
+  >
+    <WhatsAppIcon />
+    Chat on WhatsApp
+  </button>
+</div>
+
+
+
 
           {/* ── FORM CARD ── */}
           <div className="form-card">
@@ -383,7 +785,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* ── TRUST BAR ── */}
+        {/* ── TRUST BAR ── 
         <div style={{ maxWidth: "1000px", margin: "2rem auto 0" }}>
           <div className="trust-bar">
             {[
@@ -398,7 +800,7 @@ export default function ContactPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
       </main>
 

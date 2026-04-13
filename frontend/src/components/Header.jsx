@@ -122,37 +122,111 @@ export default function Header() {
             </div>
           </li>
 
-          {/* Admission Services dropdown */}
-          <li className="relative group">
-            <span className="px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition cursor-pointer flex items-center gap-1">
-              Admission Services
-              <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 16 16">
-                <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-              </svg>
-            </span>
-            <div className="absolute top-full left-0 mt-1 bg-white border border-red-100 border-t-2 border-t-[#CC1B1B] rounded-xl shadow-xl min-w-[220px] z-50 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-              {admissionServices.map((s) => (
-                <a key={s.href} href={s.href} className="block px-4 py-2 text-sm hover:bg-red-50">
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          </li>
+          
 
-          {[
-            { label: "Blogs", to: "/blog" },
-            { label: "Contact Us", to: "/contact" },
-          ].map((item) => (
-            <li key={item.to}>
-              <Link
-                to={item.to}
-                className="px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+
+         {/* <li className="relative group">
+ {/* <span
+    className="px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition cursor-default flex items-center gap-1 select-none"
+  >
+    Admission Services
+    <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 16 16">
+      <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  </span>
+
+  <div className="absolute top-full left-0 mt-1 bg-white border border-red-100 border-t-2 border-t-[#CC1B1B] rounded-xl shadow-xl min-w-[220px] z-50 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+    {admissionServices.map((s) => (
+      <Link
+        key={s.href}
+        to={s.href}
+        className="block px-4 py-1.5 text-sm text-gray-700 hover:text-[#CC1B1B] hover:bg-red-50 transition"
+      >
+        {s.label}
+      </Link>
+    ))}
+  </div> 
+
+
+  <Link
+    to="/admissionServices"
+    className="px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition cursor-pointer flex items-center gap-1"
+  >
+    Admission Services
+    <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 16 16">
+      <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  </Link>
+
+  <div className="absolute top-full left-0 mt-1 bg-white border border-red-100 border-t-2 border-t-[#CC1B1B] rounded-xl shadow-xl min-w-[220px] z-50 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+    {admissionServices.map((s) => (
+      <Link
+        key={s.href}
+        to={s.href}
+        className="block px-4 py-1.5 text-sm text-gray-700 hover:text-[#CC1B1B] hover:bg-red-50 transition"
+      >
+        {s.label}
+      </Link>
+    ))}
+  </div>
+</li>  */}
+
+
+
+<li className="relative group">
+  <div className="flex items-center">
+    <Link
+      to="/admissionServices"
+      className="px-3 py-1 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition cursor-pointer flex items-center gap-1"
+    >
+      Admission Services
+    </Link>
+    <span className="px-1 py-1.5 text-gray-700 cursor-pointer hover:text-[#CC1B1B]">
+      <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 16 16">
+        <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    </span>
+  </div>
+
+  <div className="absolute top-full left-0 mt-1 bg-white border border-red-100 border-t-2 border-t-[#CC1B1B] rounded-xl shadow-xl min-w-[220px] z-50 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+    {admissionServices.map((s) => (
+      <Link
+        key={s.href}
+        to={s.href}
+        className="block px-4 py-1.5 text-sm text-gray-700 hover:text-[#CC1B1B] hover:bg-red-50 transition"
+      >
+        {s.label}
+      </Link>
+    ))}
+  </div>
+</li>
+
+
+
+
+{[
+  { label: "Blogs", to: "/blog" },
+  { label: "Contact Us", to: "/contact" },
+].map((item) => (
+  <li key={item.to}>
+    <Link
+      to={item.to}
+      className="px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition"
+    >
+      {item.label}
+    </Link>
+  </li>
+))}
+
+
+  </ul>  
+
+
+        
+
+
+
+
 
         {/* Desktop Enquiry button */}
         <button
