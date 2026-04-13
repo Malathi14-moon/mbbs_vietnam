@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 /*const API = "http://localhost:5000/universities";*/
 
-const BASE_URL = import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL;
 const API = `${BASE_URL}/universities`;
 
 const stats = [
@@ -493,6 +493,43 @@ export default function Home() {
 
 
 
+
+
+<div style={{ maxWidth: "1000px", margin: "5rem auto 0" }}>
+          <div className="cta-wrap" style={{ padding: "3.5rem 3rem" }}>
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <div className="badge-gold" style={{ marginBottom: "1.25rem" }}>Take the First Step</div>
+              <h2
+                className="serif"
+                style={{ color: "#fff", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, lineHeight: 1.25, marginBottom: "1rem" }}
+              >
+                Ready to Begin Your{" "}
+                <span style={{ color: "#F5C518" }}>MBBS Journey</span>?
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "1rem", maxWidth: "540px", lineHeight: 1.8, marginBottom: "2rem" }}>
+                Speak to our counsellors today for a free eligibility assessment and personalised roadmap. Thousands of Indian students have made Vietnam their medical education destination — your story starts here.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.875rem" }}>
+                <a href="/contact" className="btn-gold">
+                  Get Free Counselling
+                  <svg style={{ marginLeft: "8px", width: "15px", height: "15px" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+                <a href="https://wa.me/919003420057" target="_blank" rel="noreferrer" className="btn-wht">
+                  <svg style={{ marginRight: "8px", width: "17px", height: "17px" }} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5 -.669 -.51 -.173 -.008 -.371 -.01 -.57 -.01 -.198 0 -.52 .074 -.792 .372 -.272 .297 -1.04 1.016 -1.04 2.479 0 1.462 1.065 2.875 1.2₁₃ 3.0７₄ .₁₄₉ .₁₉₈ ₂₀₉₆ ₃.₂ ₅.₀₇₇ ₄.₄₈₇ .₇₀₉ .₃₀₆ ₁.₂₆₂ .₄₈₉ ₁.₆⁹⁴ .⁶²⁵ .⁷¹² .²²⁷ ₁.³⁶ .¹⁹⁵ ₁.⁸⁷¹ .¹¹⁸ .⁵⁷¹ -." />
+                  </svg>
+                  WhatsApp a Counsellor
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
 <a
   href="https://wa.me/919003420057?text=Hi%20I%20am%20interested"
   target="_blank"
@@ -508,6 +545,8 @@ export default function Home() {
     <path d="M20.52 3.48A11.86 11.86 0 0012.05 0C5.47 0 .16 5.31.16 11.88c0 2.09.55 4.13 1.6 5.94L0 24l6.35-1.66a11.87 11.87 0 005.7 1.45h.01c6.57 0 11.88-5.31 11.88-11.88 0-3.17-1.23-6.15-3.42-8.43zM12.06 21.5c-1.8 0-3.56-.48-5.1-1.4l-.36-.21-3.77.99 1-3.67-.23-.38a9.36 9.36 0 01-1.44-5c0-5.18 4.22-9.4 9.4-9.4 2.51 0 4.87.98 6.65 2.75a9.35 9.35 0 012.75 6.65c0 5.18-4.22 9.4-9.4 9.4zm5.15-7.05c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.31.2-.59.07-.28-.14-1.17-.43-2.23-1.37-.83-.74-1.4-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.5.14-.17.19-.28.28-.47.09-.18.05-.35-.02-.5-.07-.14-.61-1.48-.83-2.03-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.71.35-.25.28-.96.94-.96 2.29s.99 2.65 1.13 2.83c.14.18 1.96 2.99 4.75 4.2.66.28 1.17.45 1.57.57.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.11-.25-.18-.52-.32z"/>
   </svg>
 </a>
+
+
 
 
 

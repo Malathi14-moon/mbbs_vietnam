@@ -616,7 +616,7 @@ export default function AdmissionServices() {
           </div>
         </div>
 
-        {/* ─── CTA ─── */}
+        {/* ─── CTA ─── 
         <div style={{ maxWidth: "1000px", margin: "5rem auto 0" }}>
           <div className="cta-wrap" style={{ padding: "3.5rem 3rem" }}>
             <div style={{ position: "relative", zIndex: 1 }}>
@@ -647,7 +647,7 @@ export default function AdmissionServices() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
 
       <Footer />
