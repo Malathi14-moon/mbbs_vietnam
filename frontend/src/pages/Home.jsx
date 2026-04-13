@@ -134,7 +134,7 @@ export default function Home() {
           <SwiperSlide>
             <div className="relative w-full h-full">
               <img
-                src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1600&q=80"
+                src="https://i0.wp.com/prodirektgroup.com/wp-content/uploads/2022/09/PRODIREKT-is-a-leading-trusted-advisor-for-students-who-want-to-study-abroad.jpg"
                 alt="Vietnam"
                 className="w-full h-full object-cover"
               />

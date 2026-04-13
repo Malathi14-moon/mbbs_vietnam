@@ -163,7 +163,7 @@ export default function UniversityCard({ university = {}, onOpenEnquiry = () => 
             <span
               style={{
                 background: "#F5C518",
-                color: "#fff",
+                color: "black",
                 fontSize: "11px",
                 fontWeight: 700,
                 padding: "4px 9px",
