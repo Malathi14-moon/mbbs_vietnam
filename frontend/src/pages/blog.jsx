@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import BlogImg from "../assets/MBBS in Vietnam blog.png";
+import BlogImg from "../assets/MBBS-in-Vietnam-blog.png";
 import Blog from "../assets/blog.png";
 
 
