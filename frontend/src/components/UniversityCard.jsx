@@ -106,7 +106,7 @@ export default function UniversityCard({ university = {}, onOpenEnquiry = () => 
             boxShadow: "0 2px 10px rgba(204,27,27,0.4)",
           }}
         >
-          {fee}
+         ₹{fee}/year
         </div>
 
         {nmcRecognised && (

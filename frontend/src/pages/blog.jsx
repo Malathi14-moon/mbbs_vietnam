@@ -19,206 +19,112 @@ export default function BlogPage() {
     <>
       <Header />
 
-      {/* ── Hero Section ── */}
-      <section
+
+{/* Hero — image only */}
+<section style={{ width: "100%", overflow: "hidden" }}>
+  <img
+    src="https://cdn.pixabay.com/photo/2017/05/30/03/58/blog-2355684_1280.jpg"
+    alt="Blog hero"
+    style={{
+      width: "100%",
+      height: "80vh",
+      display: "block",
+      objectFit: "cover",
+      objectPosition: "center",
+    }}
+  />
+</section>
+
+{/* Content — below the hero */}
+<div
+  style={{
+    maxWidth: "1200px",
+    width: "100%",
+    margin: "0 auto",
+    padding: "3rem clamp(1.5rem, 5vw, 4rem)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",   // centers block elements
+    textAlign: "center",    // centers text
+  }}
+>
+  {/* Badge */}
+  <div
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "8px",
+      marginBottom: "1.25rem",
+      padding: "5px 16px",
+      borderRadius: "999px",
+      border: "1px solid rgba(245,197,24,0.45)",
+      background: "rgba(245,197,24,0.12)",
+      color: "#b8920e",
+      fontSize: "0.7rem",
+      fontWeight: 700,
+      letterSpacing: "0.14em",
+      textTransform: "uppercase",
+    }}
+  >
+    <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#F5C518", display: "inline-block" }} />
+    MBBS Vietnam · Knowledge Hub
+  </div>
+
+  {/* Heading */}
+  <h1
+    style={{
+      fontFamily: "Georgia, serif",
+      color: "#111",
+      fontSize: "clamp(2rem, 4vw, 3rem)",
+      fontWeight: 900,
+      lineHeight: 1.18,
+      marginBottom: "1rem",
+    }}
+  >
+    Insights, Guides &{" "}
+    <span style={{ color: "#CC1B1B" }}>Expert Advice</span>
+    <br />
+    for MBBS Aspirants
+  </h1>
+
+  {/* Subtext */}
+  <p
+    style={{
+      color: "#444",
+      fontSize: "1rem",
+      lineHeight: 1.8,
+      maxWidth: "600px",
+      marginBottom: "2rem",
+    }}
+  >
+    Stay informed with the latest updates on MBBS admissions in Vietnam
+    — university rankings, fee structures, visa tips, student experiences,
+    and everything you need to make the right decision.
+  </p>
+
+  {/* Topic pills */}
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
+    {["Admission Guide", "University Reviews", "Visa Tips", "Student Life", "NMC Updates", "Fee Structure"].map((tag) => (
+      <span
+        key={tag}
         style={{
-          position: "relative",
-          overflow: "hidden",
-          minHeight: "360px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "left",
-          
+          padding: "6px 14px",
+          borderRadius: "999px",
+          border: "1px solid #ddd",
+          background: "#f5f5f5",
+          color: "#333",
+          fontSize: "0.75rem",
+          fontWeight: 500,
+          cursor: "pointer",
         }}
       >
-        {/* Background image */}
-        <img
-          src="https://img.freepik.com/premium-vector/word-concept-color-geometric-shapes-blog_205544-12899.jpg"
-          alt="Blog hero"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-        />
+        {tag}
+      </span>
+    ))}
+  </div>
+</div>
 
-        {/* Dark overlay — stronger on left for text, fades right */}
-       <div
-  style={{
-    position: "absolute",
-    inset: 0,
-    background:
-      "linear-gradient(to right, rgba(10,15,40,0.50) 30%, rgba(10,15,40,0.30) 60%, rgba(10,15,40,0.25) 100%)",
-  }}
-/>
 
-        {/* Content */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            maxWidth: "1200px",
-            width: "100%",
-            margin: "0 auto",
-            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "2rem",
-            flexWrap: "wrap",
-          }}
-        >
-          {/* Left — text */}
-          <div style={{ flex: "1 1 480px" }}>
-
-            {/* Badge */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                marginBottom: "1.25rem",
-                padding: "5px 16px",
-                borderRadius: "999px",
-                border: "1px solid rgba(245,197,24,0.45)",
-                background: "rgba(245,197,24,0.12)",
-                color: "#F5C518",
-                fontSize: "0.7rem",
-                fontWeight: 700,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-              }}
-            >
-              <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#F5C518", display: "inline-block" }} />
-              MBBS Vietnam · Knowledge Hub
-            </div>
-
-            {/* Heading */}
-            <h1
-              style={{
-                fontFamily: "Georgia, serif",
-                color: "#ffffff",
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 900,
-                lineHeight: 1.18,
-                marginBottom: "1rem",
-                textShadow: "0 2px 16px rgba(0,0,0,0.4)",
-              }}
-            >
-              Insights, Guides &{" "}
-              <span style={{ color: "#F5C518" }}>Expert Advice</span>
-              <br />
-              for MBBS Aspirants
-            </h1>
-
-            {/* Subtext */}
-            <p
-              style={{
-                color: "rgba(255,255,255,0.78)",
-                fontSize: "1rem",
-                lineHeight: 1.8,
-                maxWidth: "500px",
-                marginBottom: "2rem",
-              }}
-            >
-              Stay informed with the latest updates on MBBS admissions in Vietnam
-              — university rankings, fee structures, visa tips, student experiences,
-              and everything you need to make the right decision.
-            </p>
-
-            {/* Topic pills */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-              {[
-                "Admission Guide",
-                "University Reviews",
-                "Visa Tips",
-                "Student Life",
-                "NMC Updates",
-                "Fee Structure",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  style={{
-                    padding: "6px 14px",
-                    borderRadius: "999px",
-                    border: "1px solid rgba(255,255,255,0.18)",
-                    background: "rgba(255,255,255,0.08)",
-                    backdropFilter: "blur(6px)",
-                    color: "rgba(255,255,255,0.80)",
-                    fontSize: "0.75rem",
-                    fontWeight: 500,
-                    cursor: "pointer",
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — stat cards 
-          <div
-            style={{
-              flex: "0 1 260px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.75rem",
-            }}
-          >
-            {[
-              { value: `${blogs.length || "20"}+`, label: "Articles Published", icon: "📝" },
-              { value: "10+", label: "Topics Covered", icon: "📚" },
-              { value: "Weekly", label: "New Posts", icon: "🗓️" },
-            ].map((s) => (
-              <div
-                key={s.label}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "14px",
-                  padding: "14px 18px",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                  background: "rgba(255,255,255,0.08)",
-                  backdropFilter: "blur(10px)",
-                }}
-              >
-                <span style={{ fontSize: "22px" }}>{s.icon}</span>
-                <div>
-                  <div
-                    style={{
-                      fontSize: "1.4rem",
-                      fontWeight: 900,
-                      color: "#F5C518",
-                      lineHeight: 1,
-                      fontFamily: "Georgia, serif",
-                    }}
-                  >
-                    {s.value}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "0.72rem",
-                      color: "rgba(255,255,255,0.70)",
-                      marginTop: "3px",
-                      fontWeight: 500,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    {s.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>  */}
-
-        </div>
-      </section>
 
       {/* ── Blog Cards ── */}
       <div className="max-w-7xl mx-auto px-6 py-12">

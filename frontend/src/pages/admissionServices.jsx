@@ -381,198 +381,233 @@ export default function AdmissionServices() {
 
 
 
-      <section
+
+
+      {/* Hero — image only */}
+<section style={{ width: "100%", overflow: "hidden" }}>
+  <img
+    src="https://img.freepik.com/premium-photo/indian-doctors-smiling-front-indian-flag-indian-independence-day-indian-republic-day_244157-6762.jpg?w=1400"
+    alt="Indian doctors"
+    style={{
+      width: "100%",
+      height: "90vh",        // fits exactly one screen height
+      display: "block",
+      objectFit: "cover",
+      objectPosition: "center top",
+      marginTop: "-60px",       // shifts up to keep faces visible
+    }}
+    loading="eager"
+  />
+</section>
+
+{/* Content — below the hero */}
+<div
   style={{
-    position: "relative",
-    padding: "5rem 1.5rem",
-    overflow: "hidden",
-    minHeight: "560px",
+    maxWidth: "1200px",
+    width: "100%",
+    margin: "0 auto",
+    padding: "3rem clamp(1.5rem, 5vw, 4rem)",
+    textAlign: "center",        // centers all text
     display: "flex",
-    alignItems: "center",
+    flexDirection: "column",
+    alignItems: "center",       // centers block elements
   }}
 >
-  {/* Background image */}
-  <img
-    src="https://img.freepik.com/premium-photo/several-indian-physicians-are-positioned-facing-camera-while-holding-their-hands-folded-generative-ai_1042426-17097.jpg"
-    alt="MBBS in Vietnam"
+  {/* Badge */}
+  <div style={{
+    display: "inline-block",
+    padding: "5px 16px",
+    borderRadius: "999px",
+    border: "1px solid rgba(204,27,27,0.3)",
+    background: "rgba(204,27,27,0.07)",
+    color: "#CC1B1B",
+    fontSize: "0.7rem",
+    fontWeight: 700,
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    marginBottom: "1.2rem",
+  }}>
+    Our Services
+  </div>
 
-    className="absolute inset-0 w-full h-full object-cover object-center z-0"
-    /* style={{
-      position: "absolute",
-      inset: 0,
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      objectPosition: "center",
-    }}*/
-  />
+  {/* Heading */}
+  <h1 style={{
+    fontFamily: "'Playfair Display', serif",
+    color: "#111",
+    fontSize: "clamp(1.9rem, 4vw, 3rem)",
+    fontWeight: 900,
+    lineHeight: 1.15,
+    marginBottom: "1rem",
+  }}>
+    End-to-End{" "}
+    <span style={{ color: "#CC1B1B" }}>MBBS Admission</span>
+    <br />
+    Support for Indian Students
+  </h1>
 
-  {/* Light overlay — just enough for text, image stays visible */}
-  <div
-    style={{
-      position: "absolute",
-      inset: 0,
-      background:
-        "linear-gradient(to right, rgba(0,0,0,0.62) 35%, rgba(0,0,0,0.28) 65%, rgba(0,0,0,0.10) 100%)",
-    }}
-  />
+  {/* Description */}
+  <p style={{
+    color: "#444",
+    fontSize: "clamp(0.88rem, 1.4vw, 1rem)",
+    lineHeight: 1.8,
+    marginBottom: "2rem",
+    maxWidth: "600px",
+  }}>
+    From selecting the right NMC-recognised university in Vietnam to
+    settling you in on campus — comprehensive, transparent, and
+    personalised guidance at every stage.
+  </p>
 
-  {/* Content */}
-  <div
-    style={{
-      position: "relative",
-      zIndex: 1,
-      maxWidth: "860px",
-      margin: "0 auto",
-      width: "100%",
-      textAlign: "left",
-      paddingLeft: "clamp(1rem, 5vw, 3rem)",
-    }}
-  >
-    {/* Badge */}
-    <div
-      style={{
+  {/* Stats */}
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "3rem", justifyContent: "center" }}>
+    {stats.map((s) => (
+      <div key={s.label} style={{
+        textAlign: "center",
+        padding: "12px 18px",
+        borderRadius: "10px",
+        border: "1px solid #e5e5e5",
+        background: "#fafafa",
+        minWidth: "110px",
+        marginBottom: "-40px",
+      }}>
+        <div style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "1.65rem",
+          fontWeight: 900,
+          color: "#CC1B1B",
+          lineHeight: 1,
+        }}>{s.value}</div>
+        <div style={{
+          fontSize: "0.62rem",
+          color: "#666",
+          marginTop: "5px",
+          fontWeight: 600,
+          letterSpacing: "0.07em",
+          textTransform: "uppercase",
+        }}>{s.label}</div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+
+  {/*   <section style={{ position: "relative", width: "100%", overflow: "hidden" }}>
+  {/* Full image — no crop, object-position: top shows faces 
+ <img
+  src="https://img.freepik.com/premium-photo/indian-doctors-smiling-front-indian-flag-indian-independence-day-indian-republic-day_244157-6762.jpg?w=1400"
+  alt="Indian doctors"
+  style={{
+    width: "100%",
+    height: "100vh",        // fits exactly one screen height
+    display: "block",
+    objectFit: "cover",     // fills without stretching
+    objectPosition: "center top",  // keeps faces visible
+  }}
+  loading="eager"
+/>
+
+  {/* Overlay 
+  <div style={{
+    position: "absolute",
+    inset: 0,
+    background: "linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0.10) 100%)",
+  }} />
+
+  {/* Content
+  <div style={{
+    position: "absolute",
+    inset: 0,
+    display: "flex",
+    alignItems: "center",
+    padding: "0 clamp(1.5rem, 6vw, 4rem)",
+  }}>
+    <div style={{ maxWidth: "620px" }}>
+
+      {/* Badge 
+      <div style={{
         display: "inline-block",
-        marginBottom: "1.25rem",
         padding: "5px 16px",
         borderRadius: "999px",
-        border: "1px solid rgba(245,197,24,0.5)",
-        background: "rgba(245,197,24,0.15)",
+        border: "1px solid rgba(245,197,24,0.6)",
+        background: "rgba(245,197,24,0.12)",
         color: "#F5C518",
-        fontSize: "0.72rem",
-        fontWeight: 700,
-        letterSpacing: "0.12em",
+        fontSize: "0.7rem",
+        fontWeight: 600,
+        letterSpacing: "0.14em",
         textTransform: "uppercase",
-      }}
-    >
-      Our Services
-    </div>
+        marginBottom: "1.2rem",
+      }}>
+        Our Services
+      </div>
 
-    {/* Heading */}
-    <h1
-      className="serif"
-      style={{
-        color: "#ffffff",
-        fontSize: "clamp(2rem, 4.5vw, 3.25rem)",
+      {/* Heading 
+      <h1 style={{
+        fontFamily: "'Playfair Display', serif",
+        color: "#fff",
+        fontSize: "clamp(1.9rem, 4vw, 3rem)",
         fontWeight: 900,
-        lineHeight: 1.18,
-        marginBottom: "1.1rem",
-        textShadow: "0 1px 12px rgba(0,0,0,0.4)",
-      }}
-    >
-      End-to-End{" "}
-      <span style={{ color: "#F5C518" }}>MBBS Admission</span>
-      <br />
-      Support for Indian Students
-    </h1>
+        lineHeight: 1.15,
+        marginBottom: "1rem",
+        textShadow: "0 2px 16px rgba(0,0,0,0.5)",
+      }}>
+        End-to-End{" "}
+        <span style={{ color: "#F5C518" }}>MBBS Admission</span>
+        <br />
+        Support for Indian Students
+      </h1>
 
-    {/* Subtext */}
-    <p
-      style={{
-        color: "rgba(255,255,255,0.88)",
-        fontSize: "1rem",
-        maxWidth: "500px",
+      {/* Description 
+      <p style={{
+        color: "rgba(255,255,255,0.85)",
+        fontSize: "clamp(0.88rem, 1.4vw, 1rem)",
         lineHeight: 1.8,
-        marginBottom: "2.25rem",
-        textShadow: "0 1px 6px rgba(0,0,0,0.5)",
-      }}
-    >
-      From selecting the right NMC-recognised university in Vietnam to
-      settling you in on campus — comprehensive, transparent, and
-      personalised guidance at every stage.
-    </p>
+        marginBottom: "2rem",
+        maxWidth: "480px",
+      }}>
+        From selecting the right NMC-recognised university in Vietnam to
+        settling you in on campus — comprehensive, transparent, and
+        personalised guidance at every stage.
+      </p>
 
-    {/* Stats */}
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.65rem" }}>
-      {stats.map((s) => (
-        <div
-          key={s.label}
-          style={{
+      {/* Stats 
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+        {stats.map((s) => (
+          <div key={s.label} style={{
             textAlign: "center",
-            padding: "0.75rem 1.35rem",
+            padding: "12px 18px",
             borderRadius: "10px",
-            border: "1px solid rgba(255,255,255,0.18)",
-            background: "rgba(0,0,0,0.28)",
-            backdropFilter: "blur(8px)",
-            minWidth: "115px",
-          }}
-        >
-          <div
-            className="serif"
-            style={{
-              fontSize: "1.75rem",
+            border: "1px solid rgba(255,255,255,0.15)",
+            background: "rgba(0,0,0,0.30)",
+            minWidth: "110px",
+          }}>
+            <div style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "1.65rem",
               fontWeight: 900,
               color: "#F5C518",
               lineHeight: 1,
-            }}
-          >
-            {s.value}
-          </div>
-          <div
-            style={{
-              fontSize: "0.68rem",
-              color: "rgba(255,255,255,0.80)",
-              marginTop: "4px",
+            }}>{s.value}</div>
+            <div style={{
+              fontSize: "0.62rem",
+              color: "rgba(255,255,255,0.78)",
+              marginTop: "5px",
               fontWeight: 600,
-              letterSpacing: "0.06em",
+              letterSpacing: "0.07em",
               textTransform: "uppercase",
-            }}
-          >
-            {s.label}
+            }}>{s.label}</div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
     </div>
   </div>
-</section>
+</section>  */}
 
 
 
-      {/* ─── HERO ─── 
-      <section className="hero-bg" style={{ padding: "5rem 1.5rem" }}>
-        <div className="hero-grid-pattern" />
-        <div style={{ position: "relative", zIndex: 1, maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
-
-          <div className="badge-gold" style={{ marginBottom: "1.5rem" }}>Our Services</div>
-
-          <h1
-            className="serif"
-            style={{ color: "#fff", fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 900, lineHeight: 1.15, marginBottom: "1.25rem" }}
-          >
-            End-to-End{" "}
-            <span style={{ color: "#F5C518" }}>MBBS Admission</span>
-            <br />
-            Support for Indian Students
-          </h1>
-
-          <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.0625rem", maxWidth: "600px", margin: "0 auto 2.75rem", lineHeight: 1.8 }}>
-            From selecting the right NMC-recognised university in Vietnam to settling you in on campus — we provide comprehensive, transparent, and personalised guidance at every stage of your journey.
-          </p> 
-
-          {/* Stats 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "0.75rem", maxWidth: "640px", margin: "0 auto" }}>
-            {stats.map((s) => (
-              <div key={s.label} className="stat-card">
-                <div className="serif" style={{ fontSize: "2rem", fontWeight: 900, color: "#F5C518", lineHeight: 1 }}>{s.value}</div>
-                <div style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.8)", marginTop: "5px", fontWeight: 500, letterSpacing: "0.03em" }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>  */}
-
-      {/* ─── WHY STRIP ─── 
-      <section className="why-strip">
-        <div className="why-grid">
-          {whyItems.map((item) => (
-            <div key={item.title} className="why-card">
-              <div style={{ fontSize: "1.6rem", marginBottom: "0.5rem" }}>{item.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: "0.875rem", color: "#CC1B1B", marginBottom: "3px" }}>{item.title}</div>
-              <div style={{ fontSize: "0.775rem", color: "#666", lineHeight: 1.5 }}>{item.sub}</div>
-            </div>
-          ))}
-        </div>
-      </section> */}
+      
 
       {/* ─── SERVICES GRID ─── */}
       <main className="services-section">

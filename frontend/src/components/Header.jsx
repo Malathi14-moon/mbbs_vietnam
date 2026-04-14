@@ -40,7 +40,7 @@ export default function Header() {
       {/* ── Top bar ── */}
       <div className="bg-[#CC1B1B] px-6 py-2 flex items-center justify-between">
         <div className="hidden sm:flex items-center gap-6 text-white text-xs">
-          <span>Call: +91 98765 43210</span>
+          <span>Call: +91 90034 20057</span>
           <span>Email: info@medviet.in</span>
           <span>Hours: Mon-Sat, 9 AM - 6 PM</span>
         </div>
@@ -78,7 +78,7 @@ export default function Header() {
         <ul className="hidden lg:flex items-center gap-1">
           {[
             { label: "About Us", to: "/about" },
-            { label: "MBBS in Vietnam", to: "/mbbs-vietnam" },
+            { label: "MBBS in Vietnam", to: "/mbbsInVietnam" },
           ].map((item) => (
             <li key={item.to}>
               <Link

@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 /*const API = "http://localhost:5000/universities";*/
 
-const BASE_URL = import.meta.env.VITE_API_URL || "https://mbbs-vietnam.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL;
 const API = `${BASE_URL}/universities`;
 
 const stats = [
@@ -19,6 +19,10 @@ const stats = [
   { num: "Rs.15L", label: "Avg. total cost" },
   { num: "98%", label: "Visa success" },
 ];
+
+
+
+
 
 
 const features = [
@@ -176,7 +180,7 @@ export default function Home() {
 
             <div className="relative w-full h-full">
   <img
-    src="https://i0.wp.com/prodirektgroup.com/wp-content/uploads/2022/09/PRODIREKT-is-a-leading-trusted-advisor-for-students-who-want-to-study-abroad.jpg"
+    src="https://wallpapers.com/images/hd/mbbs-hexagon-symbols-1r5fp8l34h0h0qrw.jpg"
     alt="Vietnam"
     className="w-full h-full object-cover"
   />
@@ -490,11 +494,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
-
-
-
-
 
 
 

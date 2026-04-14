@@ -6,6 +6,8 @@ import AdminDashboard from "./pages/admin";
 import BlogPage from "./pages/blog";
 import BlogDetails from "./pages/blogDetails";
 import AdmissionServices from "./pages/admissionServices";
+import MbbsVietnam from "./pages/mbbsInVietnam";
+import FloatingCallButton from "./pages/floatingCallButton";
 
 
 const isAuthenticated = () => {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/admissionServices" element={<AdmissionServices />} />
+        <Route path="/mbbsInVietnam" element={<MbbsVietnam />} />
+        
       
         <Route
           path="/admin/dashboard"
@@ -36,6 +40,8 @@ function App() {
         />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+
+      <FloatingCallButton />
     </BrowserRouter>
   );
 }
