@@ -8,6 +8,7 @@ import BlogDetails from "./pages/blogDetails";
 import AdmissionServices from "./pages/admissionServices";
 import MbbsVietnam from "./pages/mbbsInVietnam";
 import FloatingCallButton from "./pages/floatingCallButton";
+import FloatingWhatsApp from "./pages/floatingWhatsapp";
 
 
 const isAuthenticated = () => {
@@ -42,6 +43,7 @@ function App() {
       </Routes>
 
       <FloatingCallButton />
+      <FloatingWhatsApp />
     </BrowserRouter>
   );
 }

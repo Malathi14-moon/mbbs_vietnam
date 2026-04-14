@@ -309,33 +309,136 @@ export default function MbbsVietnam() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-24 max-w-4xl mx-auto px-6 mb-24">
-          <div className="hero-gradient rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#745b00]/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
-            <div className="relative z-10">
-              <h2 className="font-headline text-4xl md:text-5xl font-extrabold text-white mb-6">Secure Your Seat Today</h2>
-              <p className="font-body text-xl text-white/90 max-w-2xl mx-auto mb-10">
-                Don't miss the opportunity to join the upcoming academic session. Admissions are strictly on a first-come, first-served basis.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-[#a4000b] px-10 py-5 rounded-2xl font-headline font-black text-lg hover:bg-[#fdcc22] hover:text-[#6e5700] transition-all shadow-xl">
-                  Apply Now
-                </button>
-                <button className="bg-white/20 border border-white/30 backdrop-blur-sm text-white px-10 py-5 rounded-2xl font-headline font-bold text-lg">
-                  Request Callback
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section className="w-full py-24 px-6">
+  <div
+    style={{
+      background: "linear-gradient(135deg, #CC1B1B 0%, #a4000b 100%)",
+      borderRadius: "3rem",
+      padding: "5rem 2rem",
+      textAlign: "center",
+      position: "relative",
+      overflow: "hidden",
+      maxWidth: "100%",
+    }}
+  >
+    {/* Decorative circles */}
+    <div style={{
+      position: "absolute", top: 0, right: 0,
+      width: "300px", height: "300px",
+      background: "rgba(245,197,24,0.15)",
+      borderRadius: "50%",
+      transform: "translate(50%, -50%)",
+    }} />
+    <div style={{
+      position: "absolute", bottom: 0, left: 0,
+      width: "300px", height: "300px",
+      background: "rgba(245,197,24,0.10)",
+      borderRadius: "50%",
+      transform: "translate(-50%, 50%)",
+    }} />
+
+    {/* Gold top accent line */}
+    <div style={{
+      position: "absolute", top: 0, left: "50%",
+      transform: "translateX(-50%)",
+      width: "120px", height: "4px",
+      background: "#F5C518",
+      borderRadius: "0 0 4px 4px",
+    }} />
+
+    <div style={{ position: "relative", zIndex: 1 }}>
+      {/* Badge */}
+      <div style={{
+        display: "inline-block",
+        padding: "5px 18px",
+        borderRadius: "999px",
+        background: "rgba(245,197,24,0.18)",
+        border: "1px solid rgba(245,197,24,0.45)",
+        color: "#F5C518",
+        fontSize: "0.7rem",
+        fontWeight: 700,
+        letterSpacing: "0.14em",
+        textTransform: "uppercase",
+        marginBottom: "1.5rem",
+      }}>
+        Limited Seats Available
+      </div>
+
+      <h2 className="font-headline" style={{
+        fontSize: "clamp(2rem, 5vw, 3.5rem)",
+        fontWeight: 900,
+        color: "#fff",
+        marginBottom: "1.25rem",
+        lineHeight: 1.15,
+      }}>
+        Secure Your{" "}
+        <span style={{ color: "#F5C518" }}>Seat Today</span>
+      </h2>
+
+      <p className="font-body" style={{
+        fontSize: "1.1rem",
+        color: "rgba(255,255,255,0.88)",
+        maxWidth: "600px",
+        margin: "0 auto 2.5rem",
+        lineHeight: 1.8,
+      }}>
+        Don't miss the opportunity to join the upcoming academic session.
+        Admissions are strictly on a first-come, first-served basis.
+      </p>
+
+      <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+        <button style={{
+          padding: "14px 36px",
+          borderRadius: "12px",
+          background: "#F5C518",
+          color: "#7a4f00",
+          fontWeight: 800,
+          fontSize: "1rem",
+          border: "none",
+          cursor: "pointer",
+          fontFamily: "Manrope, sans-serif",
+          transition: "opacity 0.2s",
+        }}
+          onMouseOver={e => e.target.style.opacity = "0.88"}
+          onMouseOut={e => e.target.style.opacity = "1"}
+        >
+          Apply Now →
+        </button>
+        <button style={{
+          padding: "14px 36px",
+          borderRadius: "12px",
+          background: "rgba(255,255,255,0.12)",
+          color: "#fff",
+          fontWeight: 700,
+          fontSize: "1rem",
+          border: "1.5px solid rgba(255,255,255,0.35)",
+          cursor: "pointer",
+          fontFamily: "Manrope, sans-serif",
+          backdropFilter: "blur(6px)",
+          transition: "background 0.2s",
+        }}
+          onMouseOver={e => e.target.style.background = "rgba(255,255,255,0.20)"}
+          onMouseOut={e => e.target.style.background = "rgba(255,255,255,0.12)"}
+        >
+          Request Callback
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       </main>
 
+
+      
       
      
 
     </div>
+
+
+
+   
 
     <Footer />
 
