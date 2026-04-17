@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import docImage from "../assets/doc.jpeg"; // adjust path
+import CTA from "../components/CTA_section";
 
 const services = [
   {
@@ -693,7 +694,7 @@ export default function AdmissionServices() {
 
 
       
-
+     <CTA />
 
       <Footer />
     </div>

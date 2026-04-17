@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import Header from "../components/Header";
 import UniversityCard from "../components/UniversityCard";
 import Footer from "../components/Footer";
+import CTA from "../components/CTA_section";
 
 /*const API = "http://localhost:5000/universities";*/
 
@@ -123,6 +124,8 @@ export default function Home() {
   }, []);
 
   return (
+
+    <>
     <div className="min-h-screen bg-white font-sans">
       <Header />
       <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
@@ -503,28 +506,19 @@ export default function Home() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
       </section>
 
+
+      
+
+      </div>
+
+      <CTA />
+
       <Footer />
-    </div>
+
+      </>
+    
   );
 }

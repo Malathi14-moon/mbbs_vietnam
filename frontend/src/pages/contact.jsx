@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Contact from "../assets/Professional-contact.png"; // adjust path
+import CTA from "../components/CTA_section";
 
 const PhoneIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -721,7 +722,7 @@ export default function ContactPage() {
 
 
       
-
+      <CTA />
 
       <Footer />
     </div>

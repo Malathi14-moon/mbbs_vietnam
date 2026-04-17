@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import EnquiryModal from "../components/EnquiryModal";
+import CTA from "../components/CTA_section";
 const universities = [
   {
     name: "Can Tho University",
@@ -58,7 +60,13 @@ const steps = [
   { n: 5, title: "Departure", desc: "Pack your bags! Our team will assist with flight booking and airport pickup." },
 ];
 
+
+
+
 export default function MbbsVietnam() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
 
     <>
@@ -98,11 +106,11 @@ export default function MbbsVietnam() {
                 Experience a globally recognized medical curriculum, English-medium instructions, and high-quality clinical exposure at a fraction of the cost.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="hero-gradient text-white px-8 py-4 rounded-xl font-headline font-bold text-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
+                <button type="button" onClick={() => setIsModalOpen(true)} className="hero-gradient text-white px-8 py-4 rounded-xl font-headline font-bold text-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
                   Apply Now
                   <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
-                <button className="bg-[#e1e3e4] text-[#191c1d] px-8 py-4 rounded-xl font-headline font-bold text-lg transition-transform active:scale-95">
+                <button type="button" onClick={() => setIsModalOpen(true)} className="bg-[#e1e3e4] text-[#191c1d] px-8 py-4 rounded-xl font-headline font-bold text-lg transition-transform active:scale-95">
                   Download Brochure
                 </button>
               </div>
@@ -265,11 +273,13 @@ export default function MbbsVietnam() {
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <button className="flex-1 py-3 bg-[#a4000b] text-white rounded-xl font-headline font-bold text-sm">Enquire Now</button>
-                     {/* <button className="px-4 py-3 bg-[#e1e3e4] text-[#191c1d] rounded-xl">
-                        <span className="material-symbols-outlined text-sm">info</span>
-                      </button> */}
+                      <button type="button" onClick={() => setIsModalOpen(true)} className="flex-1 py-3 bg-[#a4000b] text-white rounded-xl font-headline font-bold text-sm">Enquire Now</button>
+                     
                     </div>
+
+                    
+
+
                   </div>
                 </div>
               ))}
@@ -308,125 +318,8 @@ export default function MbbsVietnam() {
           </div>
         </section>
 
-        {/* ── CTA ── */}
-        <section className="w-full py-24 px-6">
-  <div
-    style={{
-      background: "linear-gradient(135deg, #CC1B1B 0%, #a4000b 100%)",
-      borderRadius: "3rem",
-      padding: "5rem 2rem",
-      textAlign: "center",
-      position: "relative",
-      overflow: "hidden",
-      maxWidth: "100%",
-    }}
-  >
-    {/* Decorative circles */}
-    <div style={{
-      position: "absolute", top: 0, right: 0,
-      width: "300px", height: "300px",
-      background: "rgba(245,197,24,0.15)",
-      borderRadius: "50%",
-      transform: "translate(50%, -50%)",
-    }} />
-    <div style={{
-      position: "absolute", bottom: 0, left: 0,
-      width: "300px", height: "300px",
-      background: "rgba(245,197,24,0.10)",
-      borderRadius: "50%",
-      transform: "translate(-50%, 50%)",
-    }} />
-
-    {/* Gold top accent line */}
-    <div style={{
-      position: "absolute", top: 0, left: "50%",
-      transform: "translateX(-50%)",
-      width: "120px", height: "4px",
-      background: "#F5C518",
-      borderRadius: "0 0 4px 4px",
-    }} />
-
-    <div style={{ position: "relative", zIndex: 1 }}>
-      {/* Badge */}
-      <div style={{
-        display: "inline-block",
-        padding: "5px 18px",
-        borderRadius: "999px",
-        background: "rgba(245,197,24,0.18)",
-        border: "1px solid rgba(245,197,24,0.45)",
-        color: "#F5C518",
-        fontSize: "0.7rem",
-        fontWeight: 700,
-        letterSpacing: "0.14em",
-        textTransform: "uppercase",
-        marginBottom: "1.5rem",
-      }}>
-        Limited Seats Available
-      </div>
-
-      <h2 className="font-headline" style={{
-        fontSize: "clamp(2rem, 5vw, 3.5rem)",
-        fontWeight: 900,
-        color: "#fff",
-        marginBottom: "1.25rem",
-        lineHeight: 1.15,
-      }}>
-        Secure Your{" "}
-        <span style={{ color: "#F5C518" }}>Seat Today</span>
-      </h2>
-
-      <p className="font-body" style={{
-        fontSize: "1.1rem",
-        color: "rgba(255,255,255,0.88)",
-        maxWidth: "600px",
-        margin: "0 auto 2.5rem",
-        lineHeight: 1.8,
-      }}>
-        Don't miss the opportunity to join the upcoming academic session.
-        Admissions are strictly on a first-come, first-served basis.
-      </p>
-
-      <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-        <button style={{
-          padding: "14px 36px",
-          borderRadius: "12px",
-          background: "#F5C518",
-          color: "#7a4f00",
-          fontWeight: 800,
-          fontSize: "1rem",
-          border: "none",
-          cursor: "pointer",
-          fontFamily: "Manrope, sans-serif",
-          transition: "opacity 0.2s",
-        }}
-          onMouseOver={e => e.target.style.opacity = "0.88"}
-          onMouseOut={e => e.target.style.opacity = "1"}
-        >
-          Apply Now →
-        </button>
-        <button style={{
-          padding: "14px 36px",
-          borderRadius: "12px",
-          background: "rgba(255,255,255,0.12)",
-          color: "#fff",
-          fontWeight: 700,
-          fontSize: "1rem",
-          border: "1.5px solid rgba(255,255,255,0.35)",
-          cursor: "pointer",
-          fontFamily: "Manrope, sans-serif",
-          backdropFilter: "blur(6px)",
-          transition: "background 0.2s",
-        }}
-          onMouseOver={e => e.target.style.background = "rgba(255,255,255,0.20)"}
-          onMouseOut={e => e.target.style.background = "rgba(255,255,255,0.12)"}
-        >
-          Request Callback
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
+        
+        
       </main>
 
 
@@ -436,6 +329,13 @@ export default function MbbsVietnam() {
 
     </div>
 
+
+    <EnquiryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+
+      <CTA />
 
 
    

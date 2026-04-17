@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BlogImg from "../assets/MBBS-in-Vietnam-blog.png";
 import Blog from "../assets/blog.png";
+import CTA from "../components/CTA_section";
 
 
 export default function BlogPage() {
@@ -182,9 +183,11 @@ export default function BlogPage() {
       </div>
 
       
-
+      <CTA />
 
       <Footer />
     </>
+
+  
   );
 }

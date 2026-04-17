@@ -3,12 +3,26 @@ import { Link } from "react-router-dom";
 import EnquiryModal from "./EnquiryModal";
 
 const universities = [
-  "Hanoi Medical University",
-  "Hue University of Medicine",
-  "Ho Chi Minh City University",
-  "Can Tho University",
-  "Hai Phong University",
-  "Thai Nguyen University",
+   {
+    name: "Nam Can Tho University",
+    slug: "nam-can-tho-university",
+  },
+  {
+    name: "Phan Chau Trinh University",
+    slug: "phan-chau-trinh-university",
+  },
+  {
+    name: "Buon Ma Thuot Medical University",
+    slug: "buon-ma-thuot-medical-university",
+  },
+  {
+    name: "Can Tho University",
+    slug: "can-tho-university",
+  },
+  {
+    name: "Dai Nam University",
+    slug: "dai-nam-university",
+  },
 ];
 
 const admissionServices = [
@@ -102,7 +116,7 @@ export default function Header() {
               <p className="text-[10px] font-bold tracking-widest text-[#CC1B1B] uppercase px-3 py-1">
                 Top Medical Universities
               </p>
-              {universities.map((university, index) => (
+            {/*  {universities.map((university, index) => (
                 <Link
                   key={university}
                   to={`/universities/${index + 1}`}
@@ -113,7 +127,23 @@ export default function Header() {
                   </span>
                   {university}
                 </Link>
-              ))}
+              ))} */}
+
+              {universities.map((university, index) => (
+  <Link
+    key={university.slug}
+    to={`/universities/${university.slug}`}
+    className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-red-50 hover:text-[#CC1B1B] transition"
+  >
+    <span className="w-5 h-5 rounded bg-red-50 text-[#CC1B1B] text-xs font-bold flex items-center justify-center flex-shrink-0">
+      {index + 1}
+    </span>
+    {university.name}
+  </Link>
+))}
+
+
+
               <div className="border-t border-gray-100 mt-1 pt-1 px-3">
                 <Link to="/universities" className="text-xs font-semibold text-[#CC1B1B]">
                   View all universities →
@@ -125,51 +155,7 @@ export default function Header() {
           
 
 
-         {/* <li className="relative group">
- {/* <span
-    className="px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition cursor-default flex items-center gap-1 select-none"
-  >
-    Admission Services
-    <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 16 16">
-      <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  </span>
-
-  <div className="absolute top-full left-0 mt-1 bg-white border border-red-100 border-t-2 border-t-[#CC1B1B] rounded-xl shadow-xl min-w-[220px] z-50 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-    {admissionServices.map((s) => (
-      <Link
-        key={s.href}
-        to={s.href}
-        className="block px-4 py-1.5 text-sm text-gray-700 hover:text-[#CC1B1B] hover:bg-red-50 transition"
-      >
-        {s.label}
-      </Link>
-    ))}
-  </div> 
-
-
-  <Link
-    to="/admissionServices"
-    className="px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg hover:text-[#CC1B1B] hover:bg-red-50 transition cursor-pointer flex items-center gap-1"
-  >
-    Admission Services
-    <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 16 16">
-      <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  </Link>
-
-  <div className="absolute top-full left-0 mt-1 bg-white border border-red-100 border-t-2 border-t-[#CC1B1B] rounded-xl shadow-xl min-w-[220px] z-50 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-    {admissionServices.map((s) => (
-      <Link
-        key={s.href}
-        to={s.href}
-        className="block px-4 py-1.5 text-sm text-gray-700 hover:text-[#CC1B1B] hover:bg-red-50 transition"
-      >
-        {s.label}
-      </Link>
-    ))}
-  </div>
-</li>  */}
+        
 
 
 
@@ -283,7 +269,7 @@ export default function Header() {
           {/* Static links */}
           {[
             { label: "About Us", to: "/about" },
-            { label: "MBBS in Vietnam", to: "/mbbs-vietnam" },
+            { label: "MBBS in Vietnam", to: "/mbbsInVietnam" },
           ].map((item) => (
             <Link
               key={item.to}
@@ -317,15 +303,15 @@ export default function Header() {
               <div className="ml-3 border-l-2 border-[#F5C518] pl-3 py-1 flex flex-col gap-0.5">
                 {universities.map((university, index) => (
                   <Link
-                    key={university}
-                    to={`/universities/${index + 1}`}
+                    key={university.slug}
+                    to={`/universities/${university.slug}`}
                     onClick={closeMenu}
                     className="flex items-center gap-2 px-2 py-2 text-sm text-gray-600 rounded-lg hover:bg-red-50 hover:text-[#CC1B1B] transition"
                   >
                     <span className="w-5 h-5 rounded bg-red-50 text-[#CC1B1B] text-xs font-bold flex items-center justify-center flex-shrink-0">
                       {index + 1}
                     </span>
-                    {university}
+                    {university.name}
                   </Link>
                 ))}
                 <Link
