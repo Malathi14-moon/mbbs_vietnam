@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CTA from '../components/CTA_section';
+
+import CanPic1 from '../assets/can-pic1.webp';
+import CanPic2 from '../assets/can-pic2.webp';
+import CanPic3 from '../assets/can-pic3.webp';
+
+import EnquiryModal from "../components/EnquiryModal";
 
 const UniversityProfile = () => {
   // Add this CSS to your global styles or a separate CSS file:
@@ -77,6 +82,8 @@ const UniversityProfile = () => {
     }
   `;
 
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
 
@@ -139,7 +146,7 @@ const UniversityProfile = () => {
                 The leading public multidisciplinary university in the heart of Vietnam&apos;s Mekong Delta, fostering innovation and global medical excellence.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', paddingTop: '8px' }}>
-                <button style={{
+                <button type="button" onClick={() => setIsModalOpen(true)} style={{
                   background: '#B3261E',
                   color: '#FFFFFF',
                   fontWeight: 600,
@@ -154,7 +161,7 @@ const UniversityProfile = () => {
                 }}>
                   Apply Now <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_forward</span>
                 </button>
-                <button style={{
+                <button type="button" onClick={() => setIsModalOpen(true)} style={{
                   background: '#E8DEF8',
                   color: '#1D192B',
                   fontWeight: 600,
@@ -350,7 +357,7 @@ const UniversityProfile = () => {
         fontFamily: 'Plus Jakarta Sans, sans-serif',
         fontSize: '32px',
         fontWeight: 800,
-        color: 'var(--on-surface)',
+        color: '#CC1B1B',
         letterSpacing: '-0.01em',
         marginBottom: '12px',
         lineHeight: 1.2
@@ -674,11 +681,11 @@ const UniversityProfile = () => {
             }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '24px' }}>
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvHbY5yjCyIqpjv_4CjuQNygaEtP6COIGodDvwS858BlLPzWLRXhz_qccY5L5mRqGm58hNR2xkSTpJpzMKJ0g4hHfFv7E97qaR5L5z-z-0QGESncsdIBSuIESDZ-zMnyo0zUjWyhHERFaqyPeE0gbiMZn5PBUgf1JBdMx18HvGgJOkh2bzEQ2EysV-Pu7yddqvL4uBZdaGHBmDFsWo4eKYVBV0Ruuv0Bvbi80y6goIXw3gjiAHEAkDF3jNO6FIzRSKcs0AkmsPja8"
+                  src={CanPic1}
                   alt="medical lab"
                   style={{
                     borderRadius: '14px',
-                    height: '180px',
+                    height: '200px',
                     width: '100%',
                     objectFit: 'cover'
                   }}
@@ -688,7 +695,7 @@ const UniversityProfile = () => {
                   alt="student plaza"
                   style={{
                     borderRadius: '14px',
-                    height: '140px',
+                    height: '200px',
                     width: '100%',
                     objectFit: 'cover'
                   }}
@@ -696,21 +703,21 @@ const UniversityProfile = () => {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgi073oCadN9f5px-T0xBHV3eAjPN6CrP_VN5NOtfHn7lG0ZpPn1GgnqQREqPVlTN57z5cj2bFCvPJoP6YK2WAPl2hgc_nw5zRmYUpvLbh0PBvai5v6m5UaMlXWQ-r3sbqAuUlJSUxigfLuEgJOmIAv9iFnIp11GKd5BEAuF2XPRh0oHurNY7_klfgv94KyFLZF1UVm-4Q-P0ifYGoZUXekGR5-fWMDMTY0QQcxp66vqy8VXtduzYVkZF54aPRenbR0nXzddKqe1A"
+                  src={CanPic2}
                   alt="campus view"
                   style={{
                     borderRadius: '14px',
-                    height: '140px',
+                    height: '200px',
                     width: '100%',
                     objectFit: 'cover'
                   }}
                 />
                 <img
-                  src="https://www.vietnamonline.com/media/uploads/froala_editor/images/VNO-Can%20Tho%20University%60.jpg"
+                  src={CanPic3}
                   alt="students"
                   style={{
                     borderRadius: '14px',
-                    height: '180px',
+                    height: '200px',
                     width: '100%',
                     objectFit: 'cover'
                   }}
@@ -722,7 +729,7 @@ const UniversityProfile = () => {
                 fontFamily: 'Plus Jakarta Sans, sans-serif',
                 fontSize: '28px',
                 fontWeight: 700,
-                color: 'var(--on-surface)',
+                color: '#CC1B1B',
                 letterSpacing: '-0.01em'
               }}>
                 Academic Excellence &amp; Multidisciplinary Growth
@@ -826,7 +833,7 @@ const UniversityProfile = () => {
                 fontFamily: 'Plus Jakarta Sans, sans-serif',
                 fontSize: '28px',
                 fontWeight: 700,
-                color: 'var(--on-surface)'
+                color: '#CC1B1B'
               }}>
                 Global Perspective, Local Heart
               </h3>
@@ -969,6 +976,155 @@ const UniversityProfile = () => {
           </div>
         </section>
 
+
+
+
+
+
+
+        {/* Full Width CTA Section */}
+<section
+  style={{
+    width: "100%",
+    margin: "0",
+    padding: "80px 24px",
+    background: "linear-gradient(135deg, #FFF7F7 0%, #FDEAEA 50%, #F7F2FA 100%)",
+    position: "relative",
+    overflow: "hidden"
+  }}
+>
+  {/* Decorative Blur Circles */}
+  <div
+    style={{
+      position: "absolute",
+      top: "-80px",
+      left: "-80px",
+      width: "220px",
+      height: "220px",
+      background: "rgba(179,38,30,0.08)",
+      borderRadius: "50%",
+      filter: "blur(40px)"
+    }}
+  ></div>
+
+  <div
+    style={{
+      position: "absolute",
+      bottom: "-100px",
+      right: "-100px",
+      width: "260px",
+      height: "260px",
+      background: "rgba(125,82,96,0.08)",
+      borderRadius: "50%",
+      filter: "blur(50px)"
+    }}
+  ></div>
+
+  <div
+    style={{
+      maxWidth: "1200px",
+      margin: "0 auto",
+      textAlign: "center",
+      position: "relative",
+      zIndex: 2
+    }}
+  >
+    {/* Badge */}
+    <div
+      style={{
+        display: "inline-block",
+        padding: "8px 18px",
+        background: "#ffffff",
+        color: "#B3261E",
+        borderRadius: "999px",
+        fontSize: "12px",
+        fontWeight: "700",
+        letterSpacing: "0.08em",
+        textTransform: "uppercase",
+        marginBottom: "20px",
+        boxShadow: "0 4px 18px rgba(0,0,0,0.06)"
+      }}
+    >
+      Admissions Open 2026
+    </div>
+
+    {/* Heading */}
+    <h2
+      style={{
+        fontFamily: "Plus Jakarta Sans, sans-serif",
+        fontSize: "48px",
+        fontWeight: "800",
+        color: "#CC1B1B",
+        lineHeight: "1.2",
+        marginBottom: "18px"
+      }}
+    >
+      Shape Your Future at <br />
+      Can Tho University
+    </h2>
+
+    {/* Caption */}
+    <p
+      style={{
+        maxWidth: "760px",
+        margin: "0 auto",
+        fontSize: "18px",
+        color: "#49454F",
+        lineHeight: "1.7",
+        marginBottom: "36px"
+      }}
+    >
+      Join a globally connected university known for academic excellence,
+      research innovation, and a vibrant student life in Vietnam’s most
+      welcoming city.
+    </p>
+
+    {/* Buttons */}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexWrap: "wrap",
+        gap: "16px"
+      }}
+    >
+      <button
+        type="button"
+        onClick={() => setIsModalOpen(true)}
+        style={{
+          background: "#B3261E",
+          color: "#fff",
+          padding: "14px 30px",
+          borderRadius: "14px",
+          fontSize: "16px",
+          fontWeight: "700",
+          boxShadow: "0 10px 25px rgba(179,38,30,0.18)"
+        }}
+      >
+        Apply Now
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setIsModalOpen(true)}
+        style={{
+          background: "#ffffff",
+          color: "#1C1B1F",
+          padding: "14px 30px",
+          borderRadius: "14px",
+          fontSize: "16px",
+          fontWeight: "700",
+          border: "1px solid #E0E0E0"
+        }}
+      >
+        Get Free Guidance
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
         
         
       </main>
@@ -999,7 +1155,13 @@ const UniversityProfile = () => {
       </nav>
     </div>
 
-    <CTA />
+
+    <EnquiryModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                  />
+
+    
 
     <Footer />
 

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import BlogImg from "../assets/MBBS-in-Vietnam-blog.png";
 import Blog from "../assets/blog.png";
 import CTA from "../components/CTA_section";
+import MBBSVietnam from "../assets/MBBS-in-Vietnam-blog.png";
 
 
 export default function BlogPage() {
@@ -27,11 +28,11 @@ export default function BlogPage() {
  
 <section style={{ width: "100%", overflow: "hidden" }}>
   <img
-    src="https://tse1.explicit.bing.net/th/id/OIP.Hg8zrGLfWXHDj5a4QqRGcwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+    src={MBBSVietnam}
     alt="Blog hero"
     style={{
       width: "100%",
-      height: "80vh",
+      height: "100vh",
       display: "block",
       objectFit: "cover",
       objectPosition: "center",

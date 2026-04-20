@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CTA from "../components/CTA_section";
+import EnquiryModal from "../components/EnquiryModal";
 
 const DaiNamUniversity = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
     <Header />
@@ -61,11 +63,11 @@ const DaiNamUniversity = () => {
                 international students pursuing a global career in medicine.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
+                <button type="button" onClick={() => setIsModalOpen(true)} className="bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
                   Apply Now
                   <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
-                <button className="bg-yellow-100 text-yellow-800 px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-md transition-all active:scale-95">
+                <button type="button" onClick={() => setIsModalOpen(true)} className="bg-yellow-100 text-yellow-800 px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-md transition-all active:scale-95">
                   Download Brochure
                   <span className="material-symbols-outlined">download</span>
                 </button>
@@ -96,7 +98,7 @@ const DaiNamUniversity = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
               <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">A Truly Global Education</h2>
+                <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-[#CC1B1B]">A Truly Global Education</h2>
                 <p className="text-slate-500">
                   Tailored for the next generation of international medical practitioners, DNU provides a seamless
                   transition into the professional world.
@@ -205,7 +207,7 @@ const DaiNamUniversity = () => {
               <span className="text-yellow-600 font-bold uppercase tracking-widest text-xs block mb-4">
                 Location: Hanoi Capital
               </span>
-              <h2 className="text-4xl font-bold font-headline mb-6 leading-tight">
+              <h2 className="text-4xl font-bold font-headline mb-6 leading-tight text-[#CC1B1B]">
                 The Capital Advantage: <br />Studying in the Heart of Vietnam
               </h2>
               <p className="text-slate-500 text-lg mb-8 leading-relaxed">
@@ -301,6 +303,52 @@ const DaiNamUniversity = () => {
           </div>
         </section>
 
+
+
+        {/* Full Width CTA Section */}
+<section className="w-full bg-gradient-to-r from-red-50 via-yellow-50 to-white py-20 px-6">
+  <div className="max-w-7xl mx-auto text-center">
+
+    {/* Badge */}
+    <span className="inline-block px-5 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold uppercase tracking-wider mb-6">
+      Admissions Open 2026
+    </span>
+
+    {/* Heading */}
+    <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-gray-900 leading-tight mb-6">
+      Start Your Medical Career <br />
+      with <span className="text-[#CC1B1B]">Dai Nam University</span>
+    </h2>
+
+    {/* Subtext */}
+    <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10 text-justify md:text-center">
+      Experience world-class medical education in Hanoi with affordable tuition,
+      modern hospital training, and a globally recognized degree pathway for
+      aspiring international doctors.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-wrap justify-center gap-4">
+      <button
+        type="button"
+        onClick={() => setIsModalOpen(true)}
+        className="bg-[#CC1B1B] hover:bg-red-800 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-all duration-300"
+      >
+        Apply Now
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setIsModalOpen(true)}
+        className="border-2 border-[#CC1B1B] text-[#CC1B1B] hover:bg-red-50 px-8 py-4 rounded-xl font-bold transition-all duration-300"
+      >
+        Get Free Counselling
+      </button>
+    </div>
+
+  </div>
+</section>
+
         
       </main>
 
@@ -309,7 +357,13 @@ const DaiNamUniversity = () => {
       
     </div>
 
-    <CTA />
+
+    <EnquiryModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                  />
+
+    
 
     <Footer />  
     </>

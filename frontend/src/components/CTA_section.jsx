@@ -59,7 +59,7 @@ export default function CTASection() {
 
           {[
             { num: "2,400+", label: "Students Enrolled" },
-            { num: "Aug '25", label: "Next Intake" },
+            { num: "Aug '26", label: "Next Intake" },
             { num: "96%", label: "Success Rate" },
           ].map((item, i) => (
             <div

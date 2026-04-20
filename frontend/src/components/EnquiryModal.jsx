@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NCTU from "../assets/NCTU-Student.webp";
 
 const states = [
   "I am not an Indian",
@@ -185,9 +186,9 @@ export default function EnquiryModal({ isOpen, onClose }) {
           </form>
         </div>
 
-        <div className="relative overflow-hidden" style={{ width: "42%" }}>
+        <div className="relative overflow-hidden" style={{ width: "42%", height: "120%" }}>
           <img
-            src="https://tse4.mm.bing.net/th/id/OIP.IIUoT3tIL6zwyDB0IcoB2AHaHh?rs=1&pid=ImgDetMain&o=7&rm=3"
+            src={NCTU}
             alt="MBBS Vietnam"
             className="w-full h-full object-cover"
           />
@@ -195,7 +196,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(135deg, rgba(204,27,27,0.55) 0%, rgba(245,197,24,0.35) 100%)",
+                "linear-gradient(135deg, rgba(204,27,27,0.20) 0%, rgba(245,197,24,0.15) 100%)",
             }}
           />
           <button

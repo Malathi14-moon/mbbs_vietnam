@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import docImage from "../assets/doc.jpeg"; // adjust path
 import CTA from "../components/CTA_section";
+import Admission from "../assets/admission1.webp";
 
 const services = [
   {
@@ -388,11 +389,11 @@ export default function AdmissionServices() {
       {/* Hero — image only */}
 <section style={{ width: "100%", overflow: "hidden" }}>
   <img
-    src={docImage}
+    src={Admission}
     alt="Indian doctors"
     style={{
       width: "100%",
-      height: "90vh",        // fits exactly one screen height
+      height: "100vh",        // fits exactly one screen height
       display: "block",
       objectFit: "cover",
       objectPosition: "center top",
@@ -618,7 +619,7 @@ export default function AdmissionServices() {
             <p style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#CC1B1B", marginBottom: "0.5rem" }}>
               What We Offer
             </p>
-            <h2 className="serif" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, color: "#111", marginBottom: "0.5rem", lineHeight: 1.2 }}>
+            <h2 className="serif" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 900, color: "#CC1B1B", marginBottom: "0.5rem", lineHeight: 1.2 }}>
               9 Steps to Your MBBS in Vietnam
             </h2>
             <div className="gold-bar" />

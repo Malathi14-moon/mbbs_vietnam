@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CTA from "../components/CTA_section";
+import EnquiryModal from "../components/EnquiryModal";
 
 const tailwindConfig = `
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
@@ -132,8 +132,11 @@ export default function BUHMedical() {
     },
   ];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
+
     <Header />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
@@ -180,15 +183,15 @@ export default function BUHMedical() {
                 <h1 className="text-5xl md:text-7xl font-extrabold text-white font-headline leading-[1.1] mb-6">
                   Buon Ma Thuot Medical University
                 </h1>
-                <p className="text-xl text-gray-200 font-light leading-relaxed mb-8 border-l-4 border-red-600 pl-6">
+                <p className="text-xl text-gray-200 font-light leading-relaxed mb-8 border-l-4 border-red-600 pl-6 text-justify">
                   A Premier Specialized Medical Institution in the Central Highlands of Vietnam. Shaping the future of healthcare through excellence in education.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <button className="bg-red-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:scale-[1.02] transition-transform active:scale-95 shadow-xl shadow-red-900/20">
+                  <button type="button" onClick={() => setIsModalOpen(true)} className="bg-red-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:scale-[1.02] transition-transform active:scale-95 shadow-xl shadow-red-900/20">
                     Apply for Admission <MaterialIcon name="arrow_forward" />
                   </button>
-                  <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-colors">
-                    Inquire Now
+                  <button type="button" onClick={() => setIsModalOpen(true)} className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-colors">
+                    Enquire Now
                   </button>
                 </div>
               </div>
@@ -219,13 +222,13 @@ export default function BUHMedical() {
           <section className="py-24 max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row gap-16 items-center">
               <div className="md:w-1/2">
-                <h2 className="text-3xl font-headline font-extrabold text-gray-900 mb-6">
+                <h2 className="text-3xl font-headline font-extrabold text-[#CC1B1B] mb-6 ">
                   Nurturing Excellence Since 2013
                 </h2>
-                <p className="text-lg text-gray-500 leading-relaxed mb-6">
+                <p className="text-lg text-gray-500 leading-relaxed mb-6 text-justify">
                   Established in 2013, Buon Ma Thuot Medical University (BUH) has rapidly emerged as a vital pillar of healthcare education in Dak Lak province. As a specialized institution, we focus exclusively on training high-quality medical professionals tailored to meet the growing health needs of the Central Highlands.
                 </p>
-                <p className="text-lg text-gray-500 leading-relaxed">
+                <p className="text-lg text-gray-500 leading-relaxed text-justify">
                   Our curriculum integrates rigorous academic theory with intensive clinical practice, ensuring our graduates are not only knowledgeable but clinically proficient and compassionate healers.
                 </p>
               </div>
@@ -252,7 +255,7 @@ export default function BUHMedical() {
           <section className="py-24 bg-gray-100">
             <div className="max-w-7xl mx-auto px-6">
               <div className="text-center mb-16">
-                <h2 className="text-3xl font-headline font-extrabold text-gray-900 mb-4">Academic Programs</h2>
+                <h2 className="text-3xl font-headline font-extrabold text-[#CC1B1B] mb-4">Academic Programs</h2>
                 <p className="text-gray-500 max-w-2xl mx-auto">
                   Diverse healthcare specializations designed to meet international medical standards.
                 </p>
@@ -300,7 +303,7 @@ export default function BUHMedical() {
                 <h2 className="text-3xl md:text-4xl font-headline font-extrabold text-gray-900 mb-6">
                   Hospital Exposure from Day One
                 </h2>
-                <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                <p className="text-lg text-gray-500 leading-relaxed mb-8 text-justify">
                   Our students benefit from intensive clinical rotations at regional general hospitals and specialized medical centers in Dak Lak. This exposure provides real-world experience with diverse patient cases and state-of-the-art diagnostic equipment.
                 </p>
                 <ul className="space-y-4">
@@ -323,7 +326,7 @@ export default function BUHMedical() {
           <section className="py-24 bg-gray-200/30">
             <div className="max-w-7xl mx-auto px-6">
               <div className="mb-16">
-                <h2 className="text-3xl font-headline font-extrabold text-gray-900 mb-2">
+                <h2 className="text-3xl font-headline font-extrabold text-[#CC1B1B] mb-2">
                   Modern Academic Infrastructure
                 </h2>
                 <p className="text-gray-500">World-class facilities fueling research and medical mastery.</p>
@@ -356,10 +359,10 @@ export default function BUHMedical() {
           <section className="py-24 max-w-7xl mx-auto px-6">
             <div className="bg-white rounded-[32px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
               <div className="md:w-1/2 p-12 md:p-20 flex flex-col justify-center">
-                <h2 className="text-3xl md:text-4xl font-headline font-extrabold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-headline font-extrabold text-[#CC1B1B] mb-6">
                   The Serenity of Buon Ma Thuot
                 </h2>
-                <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                <p className="text-lg text-gray-500 leading-relaxed mb-8 text-justify">
                   Located in the "Coffee Capital" of Vietnam, our university offers a peaceful, green environment conducive to focused study. Enjoy a significantly lower cost of living compared to Ho Chi Minh City while experiencing the rich culture of the Central Highlands.
                 </p>
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-gray-100">
@@ -380,7 +383,7 @@ export default function BUHMedical() {
           {/* Why Choose & Disclaimer */}
           <section className="py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-headline font-extrabold text-gray-900 mb-8">Why Choose BUH?</h2>
+              <h2 className="text-3xl font-headline font-extrabold text-[#CC1B1B] mb-8">Why Choose BUH?</h2>
               <div className="space-y-6">
                 {whyChoose.map((item) => (
                   <div key={item.num} className="flex gap-4">
@@ -389,7 +392,7 @@ export default function BUHMedical() {
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">{item.title}</h4>
-                      <p className="text-gray-500 text-sm">{item.desc}</p>
+                      <p className="text-black-500 text-sm">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -407,7 +410,7 @@ export default function BUHMedical() {
                   <h3 className="font-headline text-xl uppercase tracking-wider">Important Disclaimer</h3>
                 </div>
                 <p className="text-gray-900 leading-relaxed mb-6 font-medium">For International MBBS Aspirants:</p>
-                <ul className="space-y-4 text-gray-500 text-sm">
+                <ul className="space-y-4 text-black-500 text-sm">
                   {[
                     "Verify latest NMC (India) and WHO eligibility guidelines before enrollment.",
                     "Confirm English-medium instruction tracks specifically for international students.",
@@ -423,6 +426,52 @@ export default function BUHMedical() {
             </div>
           </section>
 
+
+
+
+
+
+
+
+          {/* New Full Width CTA Section */}
+<section className="w-full bg-gradient-to-r from-red-50 via-white to-pink-50 py-20 px-6">
+  <div className="max-w-7xl mx-auto text-center">
+    
+    <span className="inline-block px-5 py-2 rounded-full bg-red-100 text-red-700 font-semibold text-sm uppercase tracking-wider mb-6">
+      Begin Your Medical Journey
+    </span>
+
+    <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-gray-900 leading-tight mb-6">
+      Shape Your Future in Healthcare with BUH
+    </h2>
+
+    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10 text-justify md:text-center">
+      Join a globally focused medical university offering affordable tuition, 
+      modern clinical training, and a peaceful learning environment in Vietnam.
+    </p>
+
+    <div className="flex flex-wrap justify-center gap-4">
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="bg-[#CC1B1B] hover:bg-red-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition-all duration-300"
+      >
+        Apply Now
+      </button>
+
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="border-2 border-[#CC1B1B] text-[#CC1B1B] hover:bg-red-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300"
+      >
+        Get Free Counselling
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
           
         </main>
 
@@ -431,8 +480,14 @@ export default function BUHMedical() {
         
       </div>
 
+
+      <EnquiryModal
+                      isOpen={isModalOpen}
+                      onClose={() => setIsModalOpen(false)}
+                    />
+
        
-       <CTA />
+       
       <Footer />
     </>
   );

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CTA from "../components/CTA_section";
+
 import EnquiryModal from "../components/EnquiryModal";
+import NCTUStudent from "../assets/NCTU-Student.webp";
+import NamBanner from "../assets/nam-banner.webp";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
@@ -48,6 +50,9 @@ const styles = `
 
 const Icon = ({ name, style }) => (
   <span className="material-symbols-outlined" style={style}>{name}</span>
+
+
+  
 );
 
 export default function NCTUMedical() {
@@ -64,12 +69,13 @@ export default function NCTUMedical() {
           <AcademicPrograms />
           <StudentLifeCost />
           <DisclaimerSection />
+          <CTASection />
         </main>
       
         
         
       </div>
-      <CTA />
+    
       <Footer />
     </>
   );
@@ -159,7 +165,7 @@ function HeroSection() {
         <img
           alt="Medical Student in Lab"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4nqhhTgx7QYtPSw1MqdBSWgE6_SXeAingI3zasfwVDrDON9bfLMdOMtIvq-RWGbJnlnS2WX0IBuvhdvRVDTR1w_lI0iZEOyuYrAhbmG9xAojpJeLpc_y77AUrG7Er_5OscrKmekWrNWs86r0PCA-eoy3dBmBWRQ6SXMptzsix8eIKJZfqOrgoE1uPYtvlktJrv6jSbMEGpGOC8RPF32LtwgWxm7VnGfuP43M9tEQam6V9GtRkIU-ZM_qRJr_ceSDxvAErqB0vy9s"
+          src={NamBanner}
         />
         {/* Dark overlay instead of light gradient */}
         <div style={{
@@ -236,35 +242,124 @@ function HeroSection() {
 
 function UniversityFacts() {
   return (
-    <section style={{ padding: "80px 0", background: "#f3f4f5" }}>
+
+
+    <section style={{ padding: "80px 0", background: "#f8fafc" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 16,
+          }}
+        >
           {/* Established */}
-          <div style={{
-            gridColumn: "span 2", background: "#fff",
-            padding: 32, borderRadius: 24, display: "flex", flexDirection: "column", justifyContent: "space-between",
-          }}>
+          <div
+            style={{
+              gridColumn: "span 2",
+              background: "#fff",
+              padding: 32,
+              borderRadius: 16,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              border: "1px solid #e2e8f0",
+              boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)",
+            }}
+          >
             <div>
-              <Icon name="verified" style={{ color: "#9e001f", fontSize: 40, display: "block", marginBottom: 16 }} />
-              <h3 className="font-headline" style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Established 2013</h3>
-              <p style={{ color: "#5c403f" }}>A decade of excellence in higher education, producing Vietnam's next generation of healthcare leaders.</p>
+              <div
+                style={{
+                  color: "#0369a1",
+                  fontSize: 40,
+                  display: "block",
+                  marginBottom: 16,
+                }}
+              >
+                <Icon name="verified" />
+              </div>
+              <h3
+                className="font-headline"
+                style={{
+                  fontSize: 22,
+                  fontWeight: 700,
+                  marginBottom: 8,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  color: "#0f172a",
+                }}
+              >
+                Established 2013
+              </h3>
+              <p style={{ color: "#64748b", lineHeight: 1.6, textAlign: "justify" }}>
+                A decade of excellence in higher education, producing Vietnam&apos;s next generation of healthcare leaders.
+              </p>
             </div>
           </div>
+
           {/* Can Tho */}
-          <div style={{ background: "#fecc00", padding: 32, borderRadius: 24, color: "#6e5700" }}>
-            <Icon name="location_on" style={{ fontSize: 40, display: "block", marginBottom: 16 }} />
-            <h3 className="font-headline" style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Can Tho City</h3>
-            <p style={{ fontSize: 14, opacity: 0.9 }}>The heart of the Mekong Delta, offering a serene yet vibrant academic environment.</p>
+          <div
+            style={{
+              background: "#e0f2fe",
+              padding: 32,
+              borderRadius: 16,
+              color: "#0c4a6e",
+              border: "1px solid #bae6fd",
+            }}
+          >
+            <div style={{ fontSize: 40, display: "block", marginBottom: 16 }}>
+              <Icon name="location_on" />
+            </div>
+            <h3
+              className="font-headline"
+              style={{
+                fontSize: 22,
+                fontWeight: 700,
+                marginBottom: 8,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                color: "#0c4a6e",
+              }}
+            >
+              Can Tho City
+            </h3>
+            <p style={{ fontSize: 14, lineHeight: 1.6, textAlign: "justify" }}>
+              The heart of the Mekong Delta, offering a serene yet vibrant academic environment.
+            </p>
           </div>
+
           {/* Private */}
-          <div style={{ background: "#9e001f", padding: 32, borderRadius: 24, color: "#fff" }}>
-            <Icon name="account_balance" style={{ fontSize: 40, display: "block", marginBottom: 16, color: "#fff" }} />
-            <h3 className="font-headline" style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Private</h3>
-            <p style={{ fontSize: 14, opacity: 0.9 }}>Independently governed with massive infrastructure investment and international standards.</p>
+          <div
+            style={{
+              background: "#f0f4f8",
+              padding: 32,
+              borderRadius: 16,
+              color: "#1e293b",
+              border: "1px solid #cbd5e1",
+            }}
+          >
+            <div style={{ fontSize: 40, display: "block", marginBottom: 16, color: "#0f172a" }}>
+              <Icon name="account_balance" />
+            </div>
+            <h3
+              className="font-headline"
+              style={{
+                fontSize: 22,
+                fontWeight: 700,
+                marginBottom: 8,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                color: "#0f172a",
+              }}
+            >
+              Private
+            </h3>
+            <p style={{ fontSize: 14, lineHeight: 1.6, textAlign: "justify" }}>
+              Independently governed with massive infrastructure investment and international standards.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    
   );
 }
 
@@ -301,12 +396,12 @@ function TeachingHospital() {
             <h2 className="font-headline" style={{
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 800,
               color: "#191c1d", marginBottom: 24, lineHeight: 1.3,
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif", 
             }}>
               Nam Can Tho University Hospital: Your{" "}
               <span style={{ color: "#9e001f" }}>Clinical Advantage</span>
             </h2>
-            <p style={{ fontSize: 18, color: "#5c403f", marginBottom: 32, lineHeight: 1.7 }}>
+            <p style={{ fontSize: 18, color: "#5c403f", marginBottom: 32, lineHeight: 1.7, textAlign: "justify" }}>
               Unlike traditional programs, NCTU integrates the university and hospital into one seamless campus. This ensures that every MBBS aspirant gets hands-on experience under the mentorship of senior consultants.
             </p>
             <ul style={{ listStyle: "none", marginBottom: 40 }}>
@@ -351,7 +446,7 @@ function AcademicPrograms() {
   return (
     <section style={{ padding: "80px 0", background: "#f3f4f5" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", textAlign: "center", marginBottom: 64 }}>
-        <h2 className="font-headline" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 800, marginBottom: 16, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+        <h2 className="font-headline" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 800, marginBottom: 16, fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#CC1B1B" }}>
           World-Class Programs
         </h2>
         <p style={{ color: "#5c403f", maxWidth: 480, margin: "0 auto" }}>Diverse medical streams designed to meet global healthcare demands.</p>
@@ -377,14 +472,29 @@ function AcademicPrograms() {
             <div style={{ padding: "0 24px 32px" }}>
               <h3 className="font-headline" style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{prog.title}</h3>
               <p style={{ color: "#5c403f", fontSize: 14, marginBottom: 24 }}>{prog.desc}</p>
-              <button style={{
-                width: "100%", padding: "12px 0", borderRadius: 12,
-                border: "1.5px solid #e5bdbb", color: hovered === i ? "#fff" : "#9e001f",
-                background: hovered === i ? "#9e001f" : "transparent",
-                fontWeight: 700, cursor: "pointer", transition: "all 0.3s ease", fontSize: 14,
-              }}>
-                Course Details
-              </button>
+              <a
+  href="https://nctu.edu.vn/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: "none" }}
+>
+  <button
+    style={{
+      width: "100%",
+      padding: "12px 0",
+      borderRadius: 12,
+      border: "1.5px solid #e5bdbb",
+      color: hovered === i ? "#fff" : "#9e001f",
+      background: hovered === i ? "#9e001f" : "transparent",
+      fontWeight: 700,
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+      fontSize: 14,
+    }}
+  >
+    Course Details
+  </button>
+</a>
             </div>
           </div>
         ))}
@@ -393,43 +503,145 @@ function AcademicPrograms() {
   );
 }
 
-function StudentLifeCost() {
+ function StudentLifeCost() {
   return (
-    <section style={{ padding: "96px 0" }}>
+    <section style={{ padding: "96px 0", backgroundColor: "#f8f9fb" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-        <div style={{
-          background: "#c8102e", color: "#fff",
-          borderRadius: 48, padding: "64px",
-          display: "flex", flexWrap: "wrap", alignItems: "center", gap: 48,
-          overflow: "hidden", position: "relative",
-        }}>
-          <div style={{ flex: "1 1 400px", position: "relative", zIndex: 1 }}>
-            <h2 className="font-headline" style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)", fontWeight: 800, marginBottom: 24, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              Quality Education, <br />Affordable Living
+        <div
+          style={{
+            background: "#ffffff",
+            borderRadius: 24,
+            padding: "64px",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: 48,
+            overflow: "hidden",
+            position: "relative",
+            border: "1px solid #e5e7eb",
+            boxShadow: "0 12px 40px rgba(0,0,0,0.06)",
+          }}
+        >
+          {/* Content Section */}
+          <div style={{ flex: "1 1 420px", position: "relative", zIndex: 1 }}>
+            <span
+              style={{
+                display: "inline-block",
+                background: "#eef2ff",
+                color: "#171b74",
+                fontSize: 13,
+                fontWeight: 700,
+                padding: "8px 14px",
+                borderRadius: 999,
+                marginBottom: 20,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+              }}
+            >
+              Student Lifestyle
+            </span>
+
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 3vw, 2.7rem)",
+                fontWeight: 800,
+                marginBottom: 24,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                color: "#111827",
+                lineHeight: 1.2,
+              }}
+            >
+              Quality Education,{" "}
+              <span style={{ color: "#CC1B1B" }}>Affordable Living</span>
             </h2>
-            <p style={{ fontSize: 18, opacity: 0.9, marginBottom: 32, lineHeight: 1.7 }}>
-              Can Tho offers a significantly lower cost of living compared to Ho Chi Minh City or Hanoi. Students enjoy a high quality of life with affordable housing, fresh local food, and a focused study environment.
+
+            <p
+              style={{
+                fontSize: 16,
+                color: "#4b5563",
+                marginBottom: 40,
+                lineHeight: 1.8,
+                fontWeight: 400,
+                maxWidth: 520,
+              }}
+            >
+              Can Tho offers a significantly lower cost of living compared to Ho
+              Chi Minh City or Hanoi. Students enjoy a comfortable lifestyle
+              with affordable accommodation, fresh local food, and a peaceful
+              academic environment.
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+
+            {/* Stats Grid */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 20,
+              }}
+            >
               {[
                 { value: "40% Less", label: "Living Costs than HCM" },
                 { value: "$200", label: "Avg. Monthly Expense" },
               ].map((stat) => (
-                <div key={stat.label} style={{
-                  background: "rgba(255,255,255,0.15)", padding: 16, borderRadius: 16,
-                  backdropFilter: "blur(8px)",
-                }}>
-                  <span style={{ fontSize: 28, fontWeight: 700, display: "block", marginBottom: 4 }}>{stat.value}</span>
-                  <span style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em" }}>{stat.label}</span>
+                <div
+                  key={stat.label}
+                  style={{
+                    background: "#f9fafb",
+                    border: "1px solid #e5e7eb",
+                    padding: 24,
+                    borderRadius: 18,
+                    transition: "0.3s ease",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: 28,
+                      fontWeight: 800,
+                      display: "block",
+                      marginBottom: 8,
+                      color: "#171b74",
+                    }}
+                  >
+                    {stat.value}
+                  </span>
+
+                  <span
+                    style={{
+                      fontSize: 12,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      color: "#6b7280",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {stat.label}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", position: "relative", height: 384 }}>
+
+          {/* Image Section */}
+          <div
+            style={{
+              flex: "1 1 320px",
+              position: "relative",
+              height: 400,
+              borderRadius: 22,
+              overflow: "hidden",
+              boxShadow: "0 16px 35px rgba(0,0,0,0.08)",
+            }}
+          >
             <img
               alt="Student Life Can Tho"
-              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", borderRadius: 24 }}
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaqW40XnOIzvORe--rq-RMyPcJoViX3IzIcb9uJ7vBCEGAneR44KEqCUrRwZDKc9wX83__wTtKG4-Q4WSE8v-qMdy73aX1BRUquJPWlpg7GojXAXoWRd9KTZd8RuNweZvrWUsxY03Jd61mBEaEPL1Julw6ymCKxX9KHLTym16uc6v0ltWHaJz7spKav7m3Ij37gje2nfNJMNWC6ZSpgW7Am9-aF-TGde1kKQPi_ycngv3pQiO6A8N2i1OT-a0Z1TI9OsDY95eq5sg"
+              src={NCTUStudent}
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "140%",
+                objectFit: "cover",
+              }}
             />
           </div>
         </div>
@@ -448,7 +660,7 @@ function DisclaimerSection() {
           <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
             <Icon name="policy" style={{ color: "#735c00", fontSize: 40 }} />
             <div>
-              <h3 className="font-headline" style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <h3 className="font-headline" style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, fontFamily: "'Plus Jakarta Sans', sans-serif", color: "#CC1B1B" }}>
                 International Recognition & Transparency
               </h3>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 24, marginBottom: 24 }}>
@@ -476,3 +688,211 @@ function DisclaimerSection() {
 
 
 
+function CTASection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <>
+      <section
+        style={{
+          width: "100%",
+          margin: 0,
+          padding: "0",
+          background:
+            "linear-gradient(135deg, #fff8f8 0%, #ffffff 45%, #fef2f2 100%)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Decorative Shapes */}
+        <div
+          style={{
+            position: "absolute",
+            top: -80,
+            right: -80,
+            width: 260,
+            height: 260,
+            borderRadius: "50%",
+            background: "rgba(204,27,27,0.06)",
+          }}
+        />
+
+        <div
+          style={{
+            position: "absolute",
+            bottom: -100,
+            left: -60,
+            width: 220,
+            height: 220,
+            borderRadius: "50%",
+            background: "rgba(23,27,116,0.05)",
+          }}
+        />
+
+        {/* Full Width Content */}
+        <div
+          style={{
+            width: "100%",
+            padding: "70px 24px",
+            textAlign: "center",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
+          {/* Badge */}
+          <span
+            style={{
+              display: "inline-block",
+              padding: "10px 18px",
+              borderRadius: 999,
+              background: "#fff1f2",
+              color: "#cc1b1b",
+              fontSize: 12,
+              fontWeight: 800,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              marginBottom: 22,
+            }}
+          >
+            2026 Admissions Open
+          </span>
+
+          {/* Heading */}
+          <h2
+            style={{
+              fontSize: "clamp(2rem,4vw,3.3rem)",
+              fontWeight: 800,
+              lineHeight: 1.15,
+              color: "#111827",
+              marginBottom: 18,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}
+          >
+            Begin Your{" "}
+            <span style={{ color: "#CC1B1B" }}>Medical Journey</span>{" "}
+            at NCTU
+          </h2>
+
+          {/* Text */}
+          <p
+            style={{
+              maxWidth: 700,
+              margin: "0 auto 38px",
+              fontSize: 17,
+              lineHeight: 1.8,
+              color: "#4b5563",
+            }}
+          >
+            Secure your MBBS seat in Vietnam with expert guidance on
+            admission, documentation, visa processing, and travel support.
+          </p>
+
+          {/* Buttons */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: 16,
+              marginBottom: 42,
+            }}
+          >
+            <button
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                background: "#CC1B1B",
+                color: "#fff",
+                padding: "16px 34px",
+                borderRadius: 14,
+                border: "none",
+                fontWeight: 700,
+                fontSize: 15,
+                cursor: "pointer",
+              }}
+            >
+              Apply Now
+            </button>
+
+            <a
+              href="https://nctu.edu.vn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <button
+                style={{
+                  background: "#fff",
+                  color: "#171b74",
+                  padding: "16px 34px",
+                  borderRadius: 14,
+                  border: "1.5px solid #dbeafe",
+                  fontWeight: 700,
+                  fontSize: 15,
+                  cursor: "pointer",
+                }}
+              >
+                Visit University
+              </button>
+            </a>
+          </div>
+
+          {/* Stats */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: 18,
+              maxWidth: 900,
+              margin: "0 auto",
+            }}
+          >
+            {[
+              { value: "500+", label: "Students Guided" },
+              { value: "100%", label: "Visa Support" },
+              { value: "₹0", label: "Counselling Fee" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                style={{
+                  background: "#f9fafb",
+                  padding: 20,
+                  borderRadius: 18,
+                  border: "1px solid #e5e7eb",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: "#171b74",
+                    marginBottom: 6,
+                  }}
+                >
+                  {item.value}
+                </div>
+
+                <div
+                  style={{
+                    fontSize: 13,
+                    color: "#6b7280",
+                    fontWeight: 600,
+                  }}
+                >
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+      <EnquiryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+      
+    </>
+  );
+}

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CTA from "../components/CTA_section";
+
+import EnquiryModal from "../components/EnquiryModal";
+import PhanBanner from "../assets/phan-banner.webp";
 
 
 const PhanChauTrinhUniversity = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
 
@@ -48,7 +51,7 @@ const PhanChauTrinhUniversity = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1vh7Y2-cuY2F5C2wAMG8HVBszpZ-xNP7z5LXp5FOW5Px2q8FDubD0hJLh6idPa1YuUFWA1OlM9n3ygCrBTSGoW1Ka4cmICt8UY8gDKD2WKQZMDfkOCrniYDP1k_kYhj5hNhdL2e2OkBREw1QZxYEZN16VeS9U4tj4_A-4LZAJs8Efa4gdN4g_hbJ6sefh6vuklxpTTJgvMyYhGKUxgXbFd5B01LXDe5Ho4QrOfpiJ1Vpjf492RMe096IdcHk5Eq4AmKogs9HscGc"
+              src={PhanBanner}
               alt="PCTU Campus"
               className="w-full h-full object-cover opacity-90"
             />
@@ -71,10 +74,10 @@ const PhanChauTrinhUniversity = () => {
                 USMLE-standard curriculum.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <button className="bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
+                <button type="button" onClick={() => setIsModalOpen(true)}  className="bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
                   Apply Now <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
-                <button className="bg-yellow-100 text-yellow-800 px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
+                <button type="button" onClick={() => setIsModalOpen(true)} className="bg-yellow-100 text-yellow-800 px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
                   Download Brochure <span className="material-symbols-outlined">download</span>
                 </button>
               </div>
@@ -110,8 +113,8 @@ const PhanChauTrinhUniversity = () => {
         <section className="py-24 bg-gray-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-16 text-center">
-              <h2 className="font-headline text-4xl font-bold mb-4">Core Program Highlights</h2>
-              <div className="h-1.5 w-24 bg-red-800 mx-auto rounded-full"></div>
+              <h2 className="font-headline text-4xl font-bold mb-4 text-[#CC1B1B]">Core Program Highlights</h2>
+              <div className="h-1.5 w-24  mx-auto rounded-full"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -122,7 +125,7 @@ const PhanChauTrinhUniversity = () => {
                     <span className="material-symbols-outlined text-red-800">apartment</span>
                   </div>
                   <h3 className="text-3xl font-headline font-bold mb-4">Clinical Training Network</h3>
-                  <p className="text-slate-500 max-w-md text-lg leading-relaxed">
+                  <p className="text-slate-500 max-w-md text-lg leading-relaxed text-justify">
                     Access to 9 affiliated hospitals with over 1500+ beds for immersive clinical rotations and
                     hands-on patient care experience.
                   </p>
@@ -149,7 +152,7 @@ const PhanChauTrinhUniversity = () => {
               <div className="md:col-span-4 bg-yellow-100 p-8 rounded-[2rem] text-yellow-900">
                 <span className="material-symbols-outlined text-4xl mb-4">medical_services</span>
                 <h3 className="text-2xl font-headline font-bold mb-3">Hospital-University Integrated Model</h3>
-                <p className="text-sm leading-relaxed opacity-90">
+                <p className="text-sm leading-relaxed opacity-90 text-justify">
                   Our unique curriculum integrates hospital rounds from year one, ensuring medical theory is
                   immediately applicable in clinical settings.
                 </p>
@@ -166,7 +169,7 @@ const PhanChauTrinhUniversity = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-headline font-bold mb-4">USMLE Step 1 &amp; 2 Support</h3>
-                  <p className="text-slate-500 mb-6">
+                  <p className="text-slate-500 mb-6 text-justify">
                     Specialized coaching and resource access for students aiming for US Residency through the USMLE
                     pathway.
                   </p>
@@ -244,7 +247,7 @@ const PhanChauTrinhUniversity = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
               <div>
-                <h2 className="font-headline text-4xl font-bold mb-4">Life at PCTU</h2>
+                <h2 className="font-headline text-4xl font-bold mb-4 text-[#CC1B1B]">Life at PCTU</h2>
                 <p className="text-slate-500 max-w-xl">
                   A home away from home, specifically tailored for international students from India and across the
                   globe.
@@ -272,7 +275,7 @@ const PhanChauTrinhUniversity = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">Modern Hostels</h3>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-slate-500 text-justify">
                     Safe, secure, and fully-equipped residency halls with high-speed internet and quiet study zones.
                   </p>
                 </div>
@@ -294,7 +297,7 @@ const PhanChauTrinhUniversity = () => {
                       Speciality
                     </span>
                   </div>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-slate-500 text-justify">
                     Dedicated kitchen staff serving authentic Indian meals (Veg &amp; Non-Veg) daily in the university
                     mess.
                   </p>
@@ -312,7 +315,7 @@ const PhanChauTrinhUniversity = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">Da Nang Vicinity</h3>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-slate-500 text-justify">
                     Minutes away from Da Nang's beautiful beaches and cultural heritage sites, offering a perfect
                     balance.
                   </p>
@@ -322,6 +325,56 @@ const PhanChauTrinhUniversity = () => {
           </div>
         </section>
 
+
+
+        {/* CTA Section */}
+        <section className="w-full py-24 bg-gradient-to-r from-[#fff7f7] via-[#ffffff] to-[#fff1f1] overflow-hidden relative">
+  {/* Decorative Shapes */}
+  <div className="absolute -top-20 -left-20 w-72 h-72 bg-red-100 rounded-full blur-3xl"></div>
+  <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-yellow-100 rounded-full blur-3xl"></div>
+
+  <div className="relative z-10 w-full px-6 md:px-12 text-center">
+    {/* Badge */}
+    <span className="inline-block px-5 py-2 rounded-full bg-red-50 border border-red-100 text-red-700 text-sm font-bold uppercase tracking-widest mb-6">
+      Admissions Open 2026
+    </span>
+
+    {/* Heading */}
+    <h2 className="font-headline text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
+      Begin Your Journey at <br />
+      <span className="text-[#CC1B1B]">Phan Chau Trinh University</span>
+    </h2>
+
+    {/* Description */}
+    <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
+      Join one of Vietnam’s most progressive medical universities with
+      integrated hospital training, global curriculum standards, and
+      exceptional student support.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-14">
+      <button
+        type="button"
+        onClick={() => setIsModalOpen(true)}
+        className="bg-[#CC1B1B] text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-md"
+      >
+        Apply Now
+      </button>
+
+      <a
+        href="https://pctu.edu.vn/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="border border-gray-300 bg-white text-gray-800 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-sm">
+          Visit University
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+
         
       </main>
 
@@ -330,7 +383,14 @@ const PhanChauTrinhUniversity = () => {
       
     </div>
 
-    <CTA />
+
+    <EnquiryModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+              />
+    
+
+    
     <Footer />
 
     </>
