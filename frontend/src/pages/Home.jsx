@@ -8,6 +8,10 @@ import Header from "../components/Header";
 import UniversityCard from "../components/UniversityCard";
 import Footer from "../components/Footer";
 import CTA from "../components/CTA_section";
+import Hero1 from "../assets/hero1.webp";
+import Hero2 from "../assets/hero2.webp";
+import Hero3 from "../assets/hero31.webp";
+
 
 /*const API = "http://localhost:5000/universities";*/
 
@@ -183,7 +187,7 @@ export default function Home() {
 
             <div className="relative w-full h-full">
   <img
-    src="https://wallpapers.com/images/hd/mbbs-hexagon-symbols-1r5fp8l34h0h0qrw.jpg"
+    src={Hero1}
     alt="Vietnam"
     className="w-full h-full object-cover"
   />
@@ -274,7 +278,7 @@ export default function Home() {
 
            <div className="relative w-full h-full overflow-hidden">
   <img
-    src="https://th.bing.com/th/id/OIP.feHgQ4d-dF4wcUgUzy6GjwHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+    src={Hero2}
     alt="Vietnam"
     className="w-full h-full object-cover object-center"
   />
@@ -347,7 +351,7 @@ export default function Home() {
 
             <div className="relative w-full h-full">
   <img
-    src="https://wallpapercave.com/wp/wp7425397.jpg"
+    src={Hero3}
     alt="MBBS in Vietnam"
     className="w-full h-full object-cover"
   />
