@@ -143,46 +143,7 @@ export default function Home() {
           className="w-full h-[600px]"
         >
           <SwiperSlide>
-          { /* <div className="relative w-full h-full">
-              <img
-                src="https://i0.wp.com/prodirektgroup.com/wp-content/uploads/2022/09/PRODIREKT-is-a-leading-trusted-advisor-for-students-who-want-to-study-abroad.jpg"
-                alt="Vietnam"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="max-w-3xl text-center px-6">
-                  <h1 className="font-serif text-5xl font-extrabold text-white mb-4">
-                    Dreaming of MBBS? <br />
-                    <span className="text-[#CC1B1B]">
-                      Vietnam Makes It Possible!
-                    </span>
-                  </h1>
-
-                  <p className="text-white text-lg mb-6">
-                    Direct admission for Indian students after 12th. No donation,
-                    no IELTS - just your NEET score.
-                  </p>
-
-                  <div className="flex justify-center gap-4">
-                    <button
-                      type="button"
-                      onClick={() => setIsModalOpen(true)}
-                      className="px-7 py-3.5 bg-[#CC1B1B] text-white font-bold rounded-xl hover:bg-[#b01616]"
-                    >
-                      Apply Now -&gt;
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setIsModalOpen(true)}
-                      className="px-7 py-3.5 bg-[#F5C518] text-yellow-900 font-bold rounded-xl hover:bg-yellow-400"
-                    >
-                      Download Brochure
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+          
 
 
             <div className="relative w-full h-full">
@@ -192,58 +153,118 @@ export default function Home() {
     className="w-full h-full object-cover"
   />
 
-  {/* Deep gradient overlay — stronger in center for text clarity 
-  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/20" /> */}
-  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
+  {/* Layer 1 — strong dark base */}
+  <div className="absolute inset-0 bg-black/60" />
 
+  {/* Layer 2 — red brand gradient from bottom */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(to top, rgba(204,27,27,0.45) 0%, transparent 50%)",
+    }}
+  />
 
+  {/* Layer 3 — center focus vignette */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%)",
+    }}
+  />
 
-
+  {/* Content */}
   <div className="absolute inset-0 flex items-center justify-center">
     <div className="max-w-3xl text-center px-6">
 
       {/* Eyebrow badge */}
-      <span className="inline-block mb-4 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-red-200 border border-red-400/50 bg-red-800/20 rounded-full">
-        For Indian Students · After 12th · NEET Accepted
-      </span>
+      <div className="flex justify-center mb-5">
+        <span
+          className="inline-flex items-center gap-2 px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full border border-yellow-400/60"
+          style={{
+            background: "rgba(245,197,24,0.12)",
+            color: "#F5C518",
+            backdropFilter: "blur(8px)",
+            boxShadow: "0 0 20px rgba(245,197,24,0.15)",
+          }}
+        >
+          <span
+            className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse"
+          />
+          For Indian Students · After 12th · NEET Accepted
+        </span>
+      </div>
 
-      {/* Heading with text shadow */}
+      {/* Main heading */}
       <h1
-        className="font-serif text-5xl font-extrabold text-white mb-2 leading-tight"
-        style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.9)" }}
+        className="font-serif text-5xl md:text-6xl font-extrabold text-white mb-3 leading-tight"
+        style={{
+          textShadow:
+            "0 2px 30px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,1)",
+        }}
       >
         Dreaming of MBBS?
       </h1>
+
+      {/* Sub heading */}
       <h2
-        className="font-serif text-4xl font-extrabold text-red-400 mb-5 leading-tight"
-        style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.95)" }}
+        className="font-serif text-4xl md:text-5xl font-extrabold mb-6 leading-tight"
+  style={{
+    color: "#FFFFFF",
+    textShadow: "0 2px 20px rgba(0,0,0,0.9)",
+        }}
       >
         Vietnam Makes It Possible!
       </h2>
 
-      {/* Frosted glass tagline pill */}
+      {/* Divider line */}
+      <div className="flex items-center justify-center gap-3 mb-6">
+        <div className="h-px w-16 bg-gradient-to-r from-transparent to-yellow-400/60" />
+        <span className="text-yellow-400/80 text-xs">✦</span>
+        <div className="h-px w-16 bg-gradient-to-l from-transparent to-yellow-400/60" />
+      </div>
+
+      {/* Tagline pill */}
       <p
-        className="inline-block text-white/90 text-base mb-7 px-5 py-2.5 rounded-xl border border-white/15"
-        style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)" }}
+        className="inline-block text-white text-base font-medium mb-8 px-6 py-3 rounded-2xl border border-white/20"
+        style={{
+          background: "rgba(0,0,0,0.50)",
+          backdropFilter: "blur(10px)",
+          textShadow: "0 1px 6px rgba(0,0,0,0.8)",
+          boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+        }}
       >
-        Direct admission · No donation · No IELTS required
+        ✅ Direct admission &nbsp;·&nbsp; ✅ No donation &nbsp;·&nbsp; ✅ No IELTS required
       </p>
 
       {/* CTA Buttons */}
-      <div className="flex justify-center gap-4">
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
         <button
           type="button"
           onClick={() => setIsModalOpen(true)}
-          className="px-7 py-3.5 bg-[#CC1B1B] text-white font-bold rounded-xl hover:bg-[#b01616] shadow-lg shadow-red-900/50"
+          className="px-8 py-3.5 text-white font-bold rounded-xl transition-all duration-200 hover:scale-105"
+          style={{
+            background: "linear-gradient(135deg, #CC1B1B 0%, #a01515 100%)",
+            boxShadow:
+              "0 4px 20px rgba(204,27,27,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
+          }}
         >
           Apply Now →
         </button>
+
         <button
           type="button"
           onClick={() => setIsModalOpen(true)}
-          className="px-7 py-3.5 bg-[#F5C518] text-yellow-900 font-bold rounded-xl hover:bg-yellow-400 shadow-lg shadow-yellow-900/30"
+          className="px-8 py-3.5 font-bold rounded-xl transition-all duration-200 hover:scale-105"
+          style={{
+            background: "linear-gradient(135deg, #F5C518 0%, #d4a800 10%)",
+            color: "#1a0e00",
+            boxShadow:
+              "0 4px 20px rgba(245,197,24,0.4), inset 0 1px 0 rgba(255,255,255,0.2)",
+          }}
         >
-          Download Brochure
+          📄 Download Brochure
         </button>
       </div>
 
@@ -265,36 +286,77 @@ export default function Home() {
     className="w-full h-full object-cover object-center"
   />
 
-  {/* Stronger overlay for light image 
-  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-black/50" /> */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/5" />
+  {/* Layer 1 — dark base */}
+  <div className="absolute inset-0 bg-black/60" />
+
+  {/* Layer 2 — red brand gradient from bottom */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(to top, rgba(204,27,27,0.45) 0%, transparent 50%)",
+    }}
+  />
+
+  {/* Layer 3 — center focus vignette */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%)",
+    }}
+  />
 
   <div className="absolute inset-0 flex items-center justify-center">
     <div className="max-w-2xl text-center px-8">
 
-      {/* Eyebrow */}
-      <p className="text-yellow-300 text-sm font-semibold uppercase tracking-widest mb-4">
-        MBBS in Vietnam · 2026 Admissions
-      </p>
+      {/* Eyebrow badge */}
+      <div className="flex justify-center mb-5">
+        <span
+          className="inline-flex items-center gap-2 px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full border border-white/30"
+          style={{
+            background: "rgba(255,255,255,0.08)",
+            color: "#FFF5E0",
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          MBBS in Vietnam · 2026 Admissions
+        </span>
+      </div>
 
       {/* Heading */}
       <h1
-        className="font-serif text-5xl font-extrabold text-white leading-tight mb-4"
-        style={{ textShadow: "0 2px 16px rgba(0,0,0,0.7)" }}
+        className="font-serif text-5xl font-extrabold text-[#F5C518] leading-tight mb-4"
+        style={{
+          textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,1)",
+        }}
       >
         Start Your Medical Career <br />
         <span
-          className="text-[#F5C518]"
-          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
+          style={{
+            color: "#FFF5E0",
+            textShadow: "0 2px 20px rgba(0,0,0,0.9)",
+          }}
         >
           with Globally Recognized MBBS
         </span>
       </h1>
 
+      {/* Divider */}
+      <div className="flex items-center justify-center gap-3 mb-5">
+        <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/40" />
+        <span className="text-white/50 text-xs">✦</span>
+        <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/40" />
+      </div>
+
       {/* Subtext */}
       <p
-        className="text-white/85 text-lg leading-relaxed"
-        style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
+        className="text-base leading-relaxed"
+        style={{
+          color: "#FFF5E0",
+          textShadow: "0 1px 10px rgba(0,0,0,0.8)",
+        }}
       >
         Study in top NMC-approved universities with advanced hospitals,
         experienced faculty, and affordable fees for Indian students.
@@ -304,60 +366,129 @@ export default function Home() {
   </div>
 </div>
 
+
           </SwiperSlide>
 
           <SwiperSlide>
            
 
-       <div className="relative w-full h-full">
+        
+<div className="relative w-full h-full">
   <img
     src={Hero3}
     alt="MBBS in Vietnam"
     className="w-full h-full object-cover"
   />
 
-  {/* <div className="absolute inset-0 bg-black/50" /> */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/5" />
+  {/* Layer 1 — dark base */}
+  <div className="absolute inset-0 bg-black/60" />
 
-  
+  {/* Layer 2 — red brand gradient from bottom */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(to top, rgba(204,27,27,0.45) 0%, transparent 50%)",
+    }}
+  />
+
+  {/* Layer 3 — center focus vignette */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%)",
+    }}
+  />
 
   <div className="absolute inset-0 flex items-center justify-center px-4">
-    <div className="max-w-5xl text-center text-white">
+    <div className="max-w-5xl text-center">
+
+      {/* Eyebrow badge */}
+      <div className="flex justify-center mb-5">
+        <span
+          className="inline-flex items-center gap-2 px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full border border-white/30"
+          style={{
+            background: "rgba(255,255,255,0.08)",
+            color: "#FFF5E0",
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          NMC Approved · Indian Curriculum · Global Career
+        </span>
+      </div>
 
       {/* Heading */}
-      <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-        Study MBBS in Vietnam  <br />
-        <span className="text-yellow-400">
-          Affordable • Recognized • Career-Focused
-        </span>
+      <h1
+        className="text-4xl md:text-5xl font-extrabold leading-tight mb-3 text-white"
+        style={{
+          textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,1)",
+        }}
+      >
+        Study MBBS in Vietnam
       </h1>
 
+      {/* Sub heading */}
+      <h2
+        className="text-3xl md:text-4xl font-extrabold mb-5"
+        style={{
+          color: "#FFF5E0",
+          textShadow: "0 2px 20px rgba(0,0,0,0.9)",
+        }}
+      >
+        Affordable • Recognized • Career-Focused
+      </h2>
+
+      {/* Divider */}
+      <div className="flex items-center justify-center gap-3 mb-6">
+        <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/40" />
+        <span className="text-white/50 text-xs">✦</span>
+        <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/40" />
+      </div>
+
       {/* Subtext */}
-      <p className="text-lg md:text-xl text-gray-200 mb-8">
+      <p
+        className="text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto"
+        style={{
+          color: "#FFF5E0",
+          textShadow: "0 1px 10px rgba(0,0,0,0.8)",
+        }}
+      >
         Get direct admission to top NMC-approved universities with modern
         hospitals, Indian curriculum support, and global career opportunities.
       </p>
-
-    
 
       {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-4">
         <button
           onClick={() => setIsModalOpen(true)}
-          className="px-8 py-3 bg-[#CC1B1B] rounded-xl font-semibold hover:bg-red-700 transition"
+          className="px-8 py-3.5 text-white font-bold rounded-xl transition-all duration-200 hover:scale-105"
+          style={{
+            background: "linear-gradient(135deg, #CC1B1B 0%, #a01515 100%)",
+            boxShadow:
+              "0 4px 20px rgba(204,27,27,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
+          }}
         >
           Apply Now →
         </button>
 
-        <a
-          href="https://wa.me/919003420057?text=Hi%20I%20am%20interested%20in%20MBBS%20in%20Vietnam"
+        
+         <a href="https://wa.me/919003420057?text=Hi%20I%20am%20interested%20in%20MBBS%20in%20Vietnam"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-8 py-3 bg-[#F5C518] rounded-xl font-semibold hover:bg-yellow-600 transition"
+          className="px-8 py-3.5 font-bold rounded-xl transition-all duration-200 hover:scale-105"
+          style={{
+            background: "linear-gradient(135deg, #F5C518 0%, #d4a800 10%)",
+            color: "#1a0e00",
+            boxShadow:
+              "0 4px 20px rgba(245,197,24,0.4), inset 0 1px 0 rgba(255,255,255,0.2)",
+          }}
         >
           Chat on WhatsApp
         </a>
       </div>
+
     </div>
   </div>
 </div>
