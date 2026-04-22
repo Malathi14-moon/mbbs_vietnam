@@ -306,22 +306,22 @@ const DaiNamUniversity = () => {
 
 
         {/* Full Width CTA Section */}
-<section className="w-full bg-gradient-to-r from-red-50 via-yellow-50 to-white py-20 px-6">
+<section className="w-full bg-gradient-to-r from-red-50 via-yellow-50 to-white py-8 px-6">
   <div className="max-w-7xl mx-auto text-center">
 
     {/* Badge */}
-    <span className="inline-block px-5 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold uppercase tracking-wider mb-6">
+    <span className="inline-block px-5 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold uppercase tracking-wider mb-3">
       Admissions Open 2026
     </span>
 
     {/* Heading */}
-    <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-gray-900 leading-tight mb-6">
+    <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-gray-900 leading-tight mb-3">
       Start Your Medical Career <br />
       with <span className="text-[#CC1B1B]">Dai Nam University</span>
     </h2>
 
     {/* Subtext */}
-    <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10 text-justify md:text-center">
+    <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6 text-justify md:text-center">
       Experience world-class medical education in Hanoi with affordable tuition,
       modern hospital training, and a globally recognized degree pathway for
       aspiring international doctors.

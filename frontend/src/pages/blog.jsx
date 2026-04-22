@@ -4,8 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BlogImg from "../assets/MBBS-in-Vietnam-blog.png";
 import Blog from "../assets/blog.png";
-import CTA from "../components/CTA_section";
 import MBBSVietnam from "../assets/MBBS-in-Vietnam-blog.png";
+import EnquiryModal from "../components/EnquiryModal";
 
 
 export default function BlogPage() {
@@ -19,6 +19,9 @@ export default function BlogPage() {
       .then((res) => res.json())
       .then(setBlogs);
   }, []);
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -183,8 +186,150 @@ export default function BlogPage() {
         </div>
       </div>
 
+
+
+     {/* Blog CTA Section */}
+<section
+  style={{
+    width: "100%",
+    margin: 0,
+    padding: "3.5rem 1.5rem",
+    background:
+      "linear-gradient(135deg, #fef9f7 0%, #ffffff 50%, #fdf3f0 100%)",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  {/* Decorative Shapes */}
+  <div
+    style={{
+      position: "absolute",
+      top: -60,
+      right: -60,
+      width: 240,
+      height: 240,
+      borderRadius: "50%",
+      background: "rgba(245, 197, 24, 0.08)",
+    }}
+  />
+
+  <div
+    style={{
+      position: "absolute",
+      bottom: -80,
+      left: -80,
+      width: 280,
+      height: 280,
+      borderRadius: "50%",
+      background: "rgba(204, 27, 27, 0.05)",
+    }}
+  />
+
+  {/* Content */}
+  <div
+    style={{
+      maxWidth: "800px",
+      margin: "0 auto",
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center",
+    }}
+  >
+    {/* Badge */}
+    <span
+      style={{
+        display: "inline-block",
+        padding: "10px 20px",
+        borderRadius: 999,
+        background: "#fff1e6",
+        color: "#d97706",
+        fontSize: 11,
+        fontWeight: 800,
+        letterSpacing: "0.1em",
+        textTransform: "uppercase",
+        marginBottom: 14,
+      }}
+    >
+      📚 Featured Resources
+    </span>
+
+    {/* Heading */}
+    <h2
+      style={{
+        fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+        fontWeight: 800,
+        lineHeight: 1.2,
+        color: "#1f2937",
+        marginBottom: 12,
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+      }}
+    >
+      Master Your MBBS Journey
+      <br />
+      <span style={{ color: "#CC1B1B" }}>with Expert Insights</span>
+    </h2>
+
+    {/* Subtext */}
+    <p
+      style={{
+        maxWidth: 650,
+        margin: "0 auto 24px",
+        fontSize: 16,
+        lineHeight: 1.7,
+        color: "#6b7280",
+      }}
+    >
+      Join 2,000+ students receiving weekly tips on university selection,
+      admission strategies, visa processes, and life in Vietnam. Get exclusive
+      guides and success stories directly in your inbox.
+    </p>
+
+    
+
+    {/* Secondary CTA */}
+    <button
+      type="button"
+      onClick={() => setIsModalOpen(true)}
+      style={{
+        background: "transparent",
+        color: "#CC1B1B",
+        border: "2px solid #CC1B1B",
+        padding: "12px 26px",
+        borderRadius: 10,
+        fontWeight: 700,
+        fontSize: 14,
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.background = "#fff5f5";
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.background = "transparent";
+      }}
+    >
+      Talk to Our Experts
+    </button>
+
+    {/* Trust Badge */}
+    <p
+      style={{
+        marginTop: 20,
+        fontSize: 13,
+        color: "#9ca3af",
+        fontWeight: 600,
+      }}
+    >
+      ✓ No spam • ✓ Unsubscribe anytime • ✓ 100% confidential
+    </p>
+  </div>
+</section>
+
       
-      <CTA />
+      <EnquiryModal
+                            isOpen={isModalOpen}
+                            onClose={() => setIsModalOpen(false)}
+                          />
 
       <Footer />
     </>

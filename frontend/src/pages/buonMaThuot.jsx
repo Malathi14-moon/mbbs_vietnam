@@ -276,9 +276,7 @@ export default function BUHMedical() {
                     <p className="text-sm text-gray-500 group-hover:text-white/80 leading-relaxed">
                       {prog.desc}
                     </p>
-                    <div className="mt-8 flex items-center gap-2 text-red-700 group-hover:text-white font-semibold text-xs uppercase tracking-widest">
-                      {prog.duration} <MaterialIcon name="trending_flat" className="text-sm" />
-                    </div>
+                    
                   </div>
                 ))}
               </div>

@@ -62,7 +62,7 @@ export default function NCTUMedical() {
       <style>{styles}</style>
       <div style={{ fontFamily: "'Inter', sans-serif", background: "#f8f9fa", color: "#191c1d" }}>
         
-        <main style={{ paddingTop: 0, paddingBottom: 96 }}>
+        <main style={{ paddingTop: 0, paddingBottom: 0 }}>
           <HeroSection />
           <UniversityFacts />
           <TeachingHospital />
@@ -170,8 +170,8 @@ function HeroSection() {
         {/* Dark overlay instead of light gradient */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.15) 100%)"
-        }} />
+          background: "linear-gradient(to right, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.15) 100%)"
+        }} />  
       </div>
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 48px", position: "relative", zIndex: 10, width: "100%" }}>
@@ -733,7 +733,7 @@ function CTASection() {
         <div
           style={{
             width: "100%",
-            padding: "70px 24px",
+            padding: "40px 24px",
             textAlign: "center",
             position: "relative",
             zIndex: 2,
@@ -751,7 +751,7 @@ function CTASection() {
               fontWeight: 800,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              marginBottom: 22,
+              marginBottom: 16,
             }}
           >
             2026 Admissions Open
@@ -764,7 +764,7 @@ function CTASection() {
               fontWeight: 800,
               lineHeight: 1.15,
               color: "#111827",
-              marginBottom: 18,
+              marginBottom: 14,
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
@@ -777,7 +777,7 @@ function CTASection() {
           <p
             style={{
               maxWidth: 700,
-              margin: "0 auto 38px",
+              margin: "0 auto 28px",
               fontSize: 17,
               lineHeight: 1.8,
               color: "#4b5563",
@@ -794,7 +794,7 @@ function CTASection() {
               flexWrap: "wrap",
               justifyContent: "center",
               gap: 16,
-              marginBottom: 42,
+              marginBottom: 32,
             }}
           >
             <button
@@ -885,14 +885,6 @@ function CTASection() {
           </div>
         </div>
       </section>
-
-
-
-      <EnquiryModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-      
     </>
   );
 }

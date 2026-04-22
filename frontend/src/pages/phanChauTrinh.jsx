@@ -55,7 +55,7 @@ const PhanChauTrinhUniversity = () => {
               alt="PCTU Campus"
               className="w-full h-full object-cover opacity-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/60 to-transparent"></div>
+          {/*  <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/60 to-transparent"></div> */}
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -69,10 +69,10 @@ const PhanChauTrinhUniversity = () => {
                 Phan Chau Trinh <br />
                 <span className="text-red-800">University</span>
               </h1>
-              <p className="text-xl text-slate-500 max-w-lg leading-relaxed">
+            {/*  <p className="text-xl text-[#111827] max-w-lg leading-relaxed">
                 Pioneering the Hospital-University model in Central Vietnam. Excellence in medical education with
                 USMLE-standard curriculum.
-              </p>
+              </p> */}
               <div className="flex flex-wrap gap-4 pt-4">
                 <button type="button" onClick={() => setIsModalOpen(true)}  className="bg-red-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
                   Apply Now <span className="material-symbols-outlined">arrow_forward</span>
@@ -328,32 +328,32 @@ const PhanChauTrinhUniversity = () => {
 
 
         {/* CTA Section */}
-        <section className="w-full py-24 bg-gradient-to-r from-[#fff7f7] via-[#ffffff] to-[#fff1f1] overflow-hidden relative">
+<section className="w-full py-12 bg-gradient-to-r from-[#fff7f7] via-[#ffffff] to-[#fff1f1] overflow-hidden relative">
   {/* Decorative Shapes */}
   <div className="absolute -top-20 -left-20 w-72 h-72 bg-red-100 rounded-full blur-3xl"></div>
   <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-yellow-100 rounded-full blur-3xl"></div>
 
   <div className="relative z-10 w-full px-6 md:px-12 text-center">
     {/* Badge */}
-    <span className="inline-block px-5 py-2 rounded-full bg-red-50 border border-red-100 text-red-700 text-sm font-bold uppercase tracking-widest mb-6">
+    <span className="inline-block px-5 py-2 rounded-full bg-red-50 border border-red-100 text-red-700 text-sm font-bold uppercase tracking-widest mb-4">
       Admissions Open 2026
     </span>
 
     {/* Heading */}
-    <h2 className="font-headline text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
+    <h2 className="font-headline text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-gray-900">
       Begin Your Journey at <br />
       <span className="text-[#CC1B1B]">Phan Chau Trinh University</span>
     </h2>
 
     {/* Description */}
-    <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
-      Join one of Vietnam’s most progressive medical universities with
+    <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
+      Join one of Vietnam's most progressive medical universities with
       integrated hospital training, global curriculum standards, and
       exceptional student support.
     </p>
 
     {/* Buttons */}
-    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-14">
+    <div className="flex flex-col sm:flex-row justify-center gap-4">
       <button
         type="button"
         onClick={() => setIsModalOpen(true)}

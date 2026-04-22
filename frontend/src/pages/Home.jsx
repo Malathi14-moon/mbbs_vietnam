@@ -192,8 +192,12 @@ export default function Home() {
     className="w-full h-full object-cover"
   />
 
-  {/* Deep gradient overlay — stronger in center for text clarity */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/20" />
+  {/* Deep gradient overlay — stronger in center for text clarity 
+  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/20" /> */}
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
+
+
+
 
   <div className="absolute inset-0 flex items-center justify-center">
     <div className="max-w-3xl text-center px-6">
@@ -251,29 +255,7 @@ export default function Home() {
           </SwiperSlide>
 
           <SwiperSlide>
-           {/* <div className="relative w-full h-full">
-              <img
-                src="https://th.bing.com/th/id/OIP.feHgQ4d-dF4wcUgUzy6GjwHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
-                alt="Vietnam"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-white/30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="max-w-3xl text-center px-6">
-                  <h1 className="font-serif text-5xl font-extrabold text-gray-900 mb-4">
-                    Dreaming of MBBS? <br />
-                    <span className="text-[#CC1B1B]">
-                      Vietnam Makes It Possible!
-                    </span>
-                  </h1>
-
-                  <p className="text-gray-600 text-lg mb-6">
-                    Direct admission for Indian students after 12th. No donation,
-                    no IELTS - just your NEET score.
-                  </p>
-                </div>
-              </div>
-            </div> */}
+           
 
 
            <div className="relative w-full h-full overflow-hidden">
@@ -283,8 +265,9 @@ export default function Home() {
     className="w-full h-full object-cover object-center"
   />
 
-  {/* Stronger overlay for light image */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-black/50" />
+  {/* Stronger overlay for light image 
+  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-black/50" /> */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/5" />
 
   <div className="absolute inset-0 flex items-center justify-center">
     <div className="max-w-2xl text-center px-8">
@@ -324,46 +307,26 @@ export default function Home() {
           </SwiperSlide>
 
           <SwiperSlide>
-           {/* <div className="relative w-full h-full">
-              <img
-                src="https://wallpapercave.com/wp/wp7425397.jpg"
-                alt="Campus"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-white/30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex gap-8 bg-white/90 rounded-2xl p-6 shadow-xl">
-                  {stats.map((stat) => (
-                    <div key={stat.label} className="text-center">
-                      <div className="text-3xl font-bold text-[#CC1B1B]">
-                        {stat.num}
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div> */}
+           
 
-
-
-            <div className="relative w-full h-full">
+       <div className="relative w-full h-full">
   <img
     src={Hero3}
     alt="MBBS in Vietnam"
     className="w-full h-full object-cover"
   />
 
-  <div className="absolute inset-0 bg-black/50" />
+  {/* <div className="absolute inset-0 bg-black/50" /> */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/5" />
+
+  
 
   <div className="absolute inset-0 flex items-center justify-center px-4">
     <div className="max-w-5xl text-center text-white">
 
       {/* Heading */}
       <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-        Study MBBS in Vietnam 🇻🇳 <br />
+        Study MBBS in Vietnam  <br />
         <span className="text-yellow-400">
           Affordable • Recognized • Career-Focused
         </span>
@@ -398,6 +361,7 @@ export default function Home() {
     </div>
   </div>
 </div>
+            
           </SwiperSlide>
         </Swiper>
 
