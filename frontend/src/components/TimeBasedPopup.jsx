@@ -55,7 +55,7 @@ function Popup({ onClose, onEnquiry }) {
           <div style={{ padding: "1.25rem 1.5rem 1.5rem" }}>
             <p
               style={{
-                color: "#555",
+                color: "#333",
                 fontSize: 14,
                 lineHeight: 1.6,
                 margin: "0 0 1.25rem",
